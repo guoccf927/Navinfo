@@ -2,7 +2,7 @@ import hashlib
 import os
 
 from crcmod.predefined import PredefinedCrc
-from Navinfo.TestHdms.Base.basefunc_test import *
+from TestHdms.Base.basefunc_test import *
 
 # filepath = r"D:\Download\557027723-trfregs-正式线-0308-不一致"
 filepath = r"D:\Download\null (8)"

@@ -2,10 +2,8 @@
 # @Time        :2022/3/4 16:04
 # @Author      :guocongcong7572@navinfo.com
 # @Description :22Q2SP2迭代10738需求
-import sys
-import pytest
 
-from Navinfo.TestHdms.Base.basefunc_test import *
+from TestHdms.Base.basefunc_test import *
 
 
 class Test_10738(TestBaseFunc):

@@ -3,11 +3,7 @@
 # @Author      :guocongcong7572@navinfo.com
 # @Description : rcs冒烟测试
 
-import os
-import sys
-import time
-from Navinfo.TestHdms.Base.basefunc_test import *
-import pytest
+from TestHdms.Base.basefunc_test import *
 
 FILE_LIST_DIR = r'E:/03 HDMS/98 测试文件/02 rcs-prod-int'
 NO_END_TIME_ERR_LIST = [
@@ -20,7 +16,6 @@ TIME_SLEEP = 3
 
 class TestRcsSmoke(TestBaseFunc):
 
-    # @pytest.mark.skip
     def test_rcsint_init(self):
         """
         范围：正式线|测试线 rcsint

@@ -14,7 +14,7 @@ import redis
 import datetime
 
 from crcmod.predefined import PredefinedCrc
-from Navinfo.TestHdms.Base.test_field import *
+from TestHdms.Base.test_field import *
 
 # 存取变量
 GLOBAL_VALUE = {}

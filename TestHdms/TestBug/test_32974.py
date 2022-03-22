@@ -3,8 +3,7 @@
 # @Author      :guocongcong7572@navinfo.com
 # @Description :#32974 [oso]客户问联：当缺失endtime字段时，返回的error log中无attr id等信息
 
-from Navinfo.TestHdms.Base.basefunc_test import *
-import pytest
+from TestHdms.Base.basefunc_test import *
 
 LOOP_NUM = 10
 TIME_SLEEP = 3

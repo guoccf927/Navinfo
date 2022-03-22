@@ -2,9 +2,8 @@
 # @Time        :2022/3/4 21:06
 # @Author      :guocongcong7572@navinfo.com
 # @Description :#10738 Daimler动态及oso元数据中checksum及crc需要与gzip解压后的数据文件保持一致
-import pytest
 
-from Navinfo.TestHdms.Base.basefunc_test import *
+from TestHdms.Base.basefunc_test import *
 
 LOOP_NUM = 10
 TIME_SLEEP = 3
@@ -46,7 +45,6 @@ class Test_10738:
     Daimler动态及oso元数据中checksum及crc需要与gzip解压后的数据文件保持一致
     """
 
-    @pytest.mark.skip()
     def test_rcsint_prod_01(self):
         """
         rcsint 正式线
@@ -56,7 +54,6 @@ class Test_10738:
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
         Base(CATALOG_OUT, TILE_LAYER_RCSINT)
 
-    @pytest.mark.skip()
     def test_rcsext_prod_02(self):
         """
         rcsext 正式线
@@ -66,7 +63,6 @@ class Test_10738:
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
         Base(CATALOG_OUT, TILE_LAYER_RCSEXT)
 
-    @pytest.mark.skip()
     def test_hcc_prod_03(self):
         """
         hcc 正式线
@@ -76,7 +72,6 @@ class Test_10738:
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
         Base(CATALOG_OUT, TILE_LAYER_HCCHCI)
 
-    # @pytest.mark.skip()
     def test_trfregs_prod_04(self):
         """
         trfregs 正式线
@@ -86,7 +81,6 @@ class Test_10738:
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
         Base(CATALOG_OUT, TILE_LAYER_TRFREGS)
 
-    # @pytest.mark.skip()
     def test_rcsint_int_05(self):
         """
         rcsint 测试线
@@ -96,7 +90,6 @@ class Test_10738:
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
         Base(CATALOG_OUT_TEST, TILE_LAYER_RCSINT)
 
-    # @pytest.mark.skip()
     def test_rcsext_int_06(self):
         """
         rcsext 测试线
@@ -106,7 +99,6 @@ class Test_10738:
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
         Base(CATALOG_OUT_TEST, TILE_LAYER_RCSEXT)
 
-    # @pytest.mark.skip()
     def test_hcc_int_07(self):
         """
         hcc 测试线
@@ -116,7 +108,6 @@ class Test_10738:
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
         Base(CATALOG_OUT_TEST, TILE_LAYER_HCCHCI)
 
-    # @pytest.mark.skip()
     def test_trfregs_int_08(self):
         """
         trfregs 测试线

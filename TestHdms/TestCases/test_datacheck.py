@@ -3,7 +3,7 @@
 # @Author      :guocongcong7572@navinfo.com
 # @Description :datacheck 字段校验
 
-from Navinfo.TestHdms.Base.basefunc_test import *
+from TestHdms.Base.basefunc_test import *
 import pytest
 
 LOOP_NUM = 10

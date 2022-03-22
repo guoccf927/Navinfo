@@ -3,8 +3,7 @@
 # @Author      :guocongcong7572@navinfo.com
 # @Description :字段缺失校验
 
-from Navinfo.TestHdms.Base.basefunc_test import *
-import pytest
+from TestHdms.Base.basefunc_test import *
 
 LOOP_NUM = 10
 TIME_SLEEP = 3
