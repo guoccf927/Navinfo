@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time        :2022/3/21 14:56
 # @Author      :guocongcong7572@navinfo.com
-# @Description :datacheck 字段校验
+# @Description :datacheck 字段校验,其中"msg_id"字段缺失不报错;;;未覆盖场景——文件不是json格式、字段重复(使用postman正常报错);;;
 
 from TestHdms.Base.basefunc_test import *
 import pytest
@@ -28,37 +28,95 @@ class Base(TestBaseFunc):
         file_list = os.listdir(self.file_dir)
         print(file_list)
         for i in range(len(file_list)):
-            if ".json" in file_list[i]:
+            print(f'文件名称为： {file_list[i]}')
+            with open(f'{self.file_dir}/{file_list[i]}', 'r', encoding='utf-8') as fp:
+                json_file = json.load(fp)
+
+            # 替换end_time为当前时间10min后
+            if 'end_time小于当前时间+15min.' in file_list[i]:
+                utc_now = datetime.datetime.utcnow()
+                utc_10_after = (utc_now + datetime.timedelta(minutes=10)).strftime("%Y-%m-%dT%H:%M:%S")
+                if 'rcs' in file_list[i]:
+                    json_file['tile_replacements'][0]['end_time'] = utc_10_after
+                if 'hcc' in file_list[i]:
+                    json_file['volatile_location_changes'][0]['oem_data_additions'][0]['end_time'] = utc_10_after
+                with open(f'{self.file_dir}/{file_list[i]}', 'w+', encoding='utf-8') as dump_f:
+                    json.dump(json_file, dump_f)
+
+            # 发送json文件
+            trace_id = self.get_trace_id(self.catalog_id, self.layer_id, json_file)
+
+            if 'clear' not in file_list[i]:
+                # 循环等待日志出现，并打印结果
+                for j in range(LOOP_NUM):
+                    res_err = self.get_errorlog(self.catalog_id, self.error_layer_id)
+                    if trace_id in res_err:
+                        print('\n')
+                        break
+                    time.sleep(TIME_SLEEP)
+                    print(f"循环{j + 1}*{str(TIME_SLEEP)}s,还没找到对应的日志")
+                assert self.error_log_list[i - 1] in res_err, f'{file_list[i]} 日志错误'
+
+
+class BaseClearHCC(TestBaseFunc):
+    """
+    清理hcc的attr_id
+    """
+    def __init__(self, catalog_id, layer_id, file_dir):
+        """
+        :param catalog_id: ingest接口中catalog
+        :param layer_id: ingest接口中layer
+        :param file_dir: 本地构造文件的路劲
+        """
+        self.catalog_id = catalog_id
+        self.layer_id = layer_id
+        self.file_dir = file_dir
+
+        # 需要删除的attr_id，避免attr_id重复影响下一步字段的校验
+        attr_id_list = [
+            "Z1/ccEEtEey3Idie8zwxiw==",
+            "Z2/ccEEtEey3Idie8zwxiw==",
+            "Z3/ccEEtEey3Idie8zwxiw==",
+            "Z4/ccEEtEey3Idie8zwxiw==",
+            "Y0/ccEEtEey3Idie8zwxiw=="
+        ]
+        # 读取文件
+        file_name = 'hcc-00-clear-attr_id.json'
+        with open(f'{self.file_dir}/{file_name}', 'r', encoding='utf-8') as fp:
+            json_file = json.load(fp)
+        # 替换attr_id
+        for attr_id in attr_id_list:
+            json_file['volatile_location_changes'][0]['oem_data_deletions'][0] = attr_id
+            with open(f'{self.file_dir}/{file_name}', 'w+', encoding='utf-8') as dump_f:
+                json.dump(json_file, dump_f)
+            # 发送json文件
+            self.get_trace_id(self.catalog_id, self.layer_id, json_file)
+        time.sleep(TIME_SLEEP)
+
+
+class BaseChangeProviderId(TestBaseFunc):
+    """
+    替换volatile_provider_id
+    """
+    def __init__(self, file_dir, volatile_provider_id):
+        """
+        :param file_dir: 本地构造文件的路劲
+        :param volatile_provider_id: hcc-102|116|118，hci-101|117
+        """
+        self.file_dir = file_dir
+        self.volatile_provider_id = volatile_provider_id
+        file_list = os.listdir(self.file_dir)
+        print(file_list)
+        for i in range(len(file_list)):
+            if 'volatile_provider_id' not in file_list[i]:
                 print(f'文件名称为： {file_list[i]}')
                 with open(f'{self.file_dir}/{file_list[i]}', 'r', encoding='utf-8') as fp:
                     json_file = json.load(fp)
 
-                # 替换end_time为当前时间10min后
-                if 'end_time小于当前时间+15min.' in file_list[i]:
-                    utc_now = datetime.datetime.utcnow()
-                    utc_10_after = (utc_now + datetime.timedelta(minutes=10)).strftime("%Y-%m-%dT%H:%M:%S")
-                    json_file['tile_replacements'][0]['end_time'] = utc_10_after
-                    with open(f'{self.file_dir}/{file_list[i]}', 'w+', encoding='utf-8') as dump_f:
-                        json.dump(json_file, dump_f)
-
-                # 发送json文件
-                trace_id = self.get_trace_id(self.catalog_id, self.layer_id, json_file)
-
-                if 'clear' in file_list[i]:
-                    # clear文件用来清理数据
-                    time.sleep(TIME_SLEEP)
-                    print('\n')
-
-                if 'clear' not in file_list[i]:
-                    # 循环等待日志出现，并打印结果
-                    for j in range(LOOP_NUM):
-                        res_err = self.get_errorlog(self.catalog_id, self.error_layer_id)
-                        if trace_id in res_err:
-                            assert self.error_log_list[i-2] in res_err, f'{file_list[i]} 日志错误'
-                            print('\n')
-                            break
-                        time.sleep(TIME_SLEEP)
-                        print(f"循环{j + 1}*{str(TIME_SLEEP)}s,还没找到对应的日志")
+                # 替换volatile_provider_id
+                json_file['volatile_provider_id'] = self.volatile_provider_id
+                with open(f'{self.file_dir}/{file_list[i]}', 'w+', encoding='utf-8') as dump_f:
+                    json.dump(json_file, dump_f)
 
 
 class TestDataCheck:
@@ -86,27 +144,75 @@ class TestDataCheck:
         file_dir = 'E:/03 HDMS/98 测试文件/data check/01 rcs-字段校验/ext'
         Base(CATALOG_RCSEXT, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, CHECK_FIELD_RCSEXT_ERRORLOG_LIST)
 
-    @pytest.mark.skip()
-    def test_hcc_prod_03(self):
+    def test_hcc_102_prod_03(self):
         """
-        hcc 正式线
-        """
-
-        # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/03 hcc-字段缺失/hcc'
-        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, MISS_FIELD_HCC_ERRORLOG_LIST)
-
-    @pytest.mark.skip()
-    def test_hci_prod_04(self):
-        """
-        hci 正式线
+        hcc 102 正式线
         """
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/03 hcc-字段缺失/hci'
-        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, MISS_FIELD_HCI_ERRORLOG_LIST)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 102
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
+        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
+
+    def test_hcc_116_prod_03(self):
+        """
+        hcc 116 正式线
+        """
+
+        # 打印当前方法名称
+        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 116
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
+        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
+
+    def test_hcc_118_prod_03(self):
+        """
+        hcc 118 正式线
+        """
+
+        # 打印当前方法名称
+        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 118
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
+        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
+
+    def test_hci_101_prod_04(self):
+        """
+        hci 101 正式线
+        """
+
+        # 打印当前方法名称
+        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 101
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
+        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
+
+    def test_hci_117_prod_04(self):
+        """
+        hci 117 正式线
+        """
+
+        # 打印当前方法名称
+        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 117
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
+        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
 
     def test_rcsint_int_05(self):
         """
@@ -128,24 +234,72 @@ class TestDataCheck:
         file_dir = 'E:/03 HDMS/98 测试文件/data check/01 rcs-字段校验/ext'
         Base(CATALOG_RCSEXT_TEST, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, CHECK_FIELD_RCSEXT_ERRORLOG_LIST)
 
-    @pytest.mark.skip()
-    def test_hcc_int_07(self):
+    def test_hcc_102_int_03(self):
         """
-        hcc 测试线
-        """
-
-        # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/03 hcc-字段缺失/hcc'
-        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, MISS_FIELD_HCC_ERRORLOG_LIST)
-
-    @pytest.mark.skip()
-    def test_hci_int_08(self):
-        """
-        hci 测试线
+        hcc 102 测试线
         """
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/03 hcc-字段缺失/hci'
-        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, MISS_FIELD_HCI_ERRORLOG_LIST)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 102
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
+        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
+
+    def test_hcc_116_int_03(self):
+        """
+        hcc 116 测试线
+        """
+
+        # 打印当前方法名称
+        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 116
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
+        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
+
+    def test_hcc_118_int_03(self):
+        """
+        hcc 118 测试线
+        """
+
+        # 打印当前方法名称
+        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 118
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
+        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
+
+    def test_hci_101_int_04(self):
+        """
+        hci 101 测试线
+        """
+
+        # 打印当前方法名称
+        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 101
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)
+        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)
+
+    def test_hci_117_int_04(self):
+        """
+        hci 117 测试线
+        """
+
+        # 打印当前方法名称
+        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        volatile_provider_id = 117
+        BaseChangeProviderId(file_dir, volatile_provider_id)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)
+        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
+        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)

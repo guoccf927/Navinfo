@@ -19,7 +19,7 @@ S3_ENV = 'hdms-dev-cn-nx-s3'  # s3备份路径
 CATALOG_OUT = "Volatiledata-NDS-2.5.4-China-Daimler"
 CATALOG_OUT_TEST = "Volatiledata-NDS-2.5.4-China-Daimler-Int"
 
-# 生产环境
+# 生产环境-catalog有变动
 # DOMAIN = 'https://hdmap-cn.navinfo.com'
 # AUTHORIZATION_NOEXPIRE = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJhdWQiOiIiLCJzdWIiOiIyMTMiLCJpc3MiOiJuYXZpbmZvIiwiZXhwIjoxNjUzOTI2NDAwLCJpYXQiOjE2NDY2MjI3ODQsImp0aSI6ImJlYTgyMTE0LWIxM2ItNGU0NC1iYjAzLTRiNzA5MTBiNGU1OCIsImNpZCI6MX0.XIrEiTSapvYeB3_4d9WapxfCUux9gBe_9A6HIuKu2tpEFUgRfvgzc14vl-XcHJ8nm6mNVOoO2tKn0lreYqmVQWNxRAlNqw7edbv-29Rxj-eWuTXeuPMZ07SZMDttSmeKixfh6p8bCORSGmJne_qEwqZEAM0hvcAxUT4EXGOCq0iGEcmWntJwzPkytmDfjkTdNXceNsi9wSBh0Noy2AWs1gvLL12OxF9T5oGHF_AjqfzsyWqPdm4-rBlzzdg2i1Bq6735V9IdQ_fCwUX6Q9hgLnTQLy-hZH5uUCryiOuZ9IG0_JFNf69Xzigz5zWXL0FMC76pdK_xWCZuU-EubUpWxU_WmB5lgW-XhTyby5woYhvx1hFsL_nqxRbfufkN805UO9BqO-Sd85GzECjZh1bvZqVLOGRFHn9uNyXFQ1cwUGBGVq65JKBtyScpcDUWMMUFEVMFqpb6v-2HJvp34kL95KrHKTTdO3A6TcegyxqOFRF8-al8XDjIWalGj9-z5hZj'
 # REDIS_CONF = {}
@@ -259,4 +259,87 @@ MISS_FIELD_HCI_ERRORLOG_LIST = [
     """"attribute_errors":[{"error_code":"EC-HCI-DC-time","error_msg":"Invalid create_time (null) due to the wrong/expired schema or value."}]""",
     """"attribute_errors":[{"error_code":"EC-HCI-DC-field","error_msg":"The following fields are missing or empty:attr_id"}]""",
     """"attribute_errors":[{"error_code":"EC-HCI-DC-payload","error_msg":"Invalid payload (null) due to the wrong value."}]"""
+]
+
+# HCC 字段校验文件和errorlog
+CHECK_FIELD_HCC_ERRORLOG_LIST = [
+    """"basic_info_errors":[{"error_code":"EC-OSO-DC-file","error_msg":"Invalid input file due to file size > 4 Mb."}]""",
+    """"basic_info_errors":[{"error_code":"EC-HCC-DC-msgType","error_msg":"The following fields(msg_type) could not be resolve successfully, please check the field value."}]""",
+    """"basic_info_errors":[{"error_code":"EC-HCC-DC-msgType","error_msg":"The following fields(msg_type) could not be resolve successfully, please check the field value."}]""",
+    """"basic_info_errors":[{"error_code":"EC-HCC-DC-msgType","error_msg":"The following fields(msg_type) could not be resolve successfully, please check the field value."}]""",
+    """"basic_info_errors":[{"error_code":"EC-OSO-DC-providerID","error_msg":"Invalid volatile_provider_id (171)."}]""",
+    """"basic_info_errors":[{"error_code":"field","error_msg":"The following fields are missing or empty:volatile_provider_id"}]""",
+    """"basic_info_errors":[{"error_code":"WC-HCC-DC-field","error_msg":"The following fields are missing or empty:map_version"}]""",
+    """"basic_info_errors":[{"error_code":"WC-HCC-DC-field","error_msg":"The following fields are missing or empty:map_version"}]""",
+    """"basic_info_errors":[{"error_code":"EC-HCC-DC-field","error_msg":"The following fields are missing or empty:volatileLocationChanges"}]""",
+    """"volatile_location_id_errors":[{"error_code":"EC-HCC-DC-volloc","error_msg":"Invalid volatile_location_id (10000000) due to it not exists in the HD NDS map(nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler) with version 86."}]""",
+    """"oem_data_deletions":[{"error_code":"EC-HCC-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
+    """"oem_data_deletions":[{"error_code":"EC-HCC-DC-attrID","error_msg":"Invalid oem data deletions due to attr id(H0/ccEEtEey3Idie8zwxiw==) with provider ID""",
+    """"oem_data_deletions":[{"error_code":"EC-HCC-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCC-DC-attrLocation","error_msg":"Invalid start_offset (-1) due to the wrong value."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCC-DC-attrLocation","error_msg":"Invalid end_offset (-1) due to the wrong value."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCC-DC-attrLocation","error_msg":"Invalid attr_length (-1) due to the wrong value."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCC-DC-attrLocation","error_msg":"Invalid oem data attribute due to the calculated attr length(7) less than 10m and it not extend over the complete volatile location."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCC-DC-attrLocation","error_msg":"Invalid attr_length (18)  due to the difference between it and the calculated attr length(27) greater than 5m."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCC-DC-time","error_msg":"Invalid start_time (2021-08-21 08:05:26) due to the wrong value."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCC-DC-time","error_msg":"Invalid end_time (2121-08-21 08:05:26) due to the wrong/expired schema or value."}]""",
+    """"oem_data_additions":[{"attr_id":"Z8/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-field","error_msg":"The following fields are missing or empty:end_time"}]}]""",
+    """"oem_data_additions":[{"attr_id":"Z0/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-time","error_msg":"Invalid end_time (null) due to the wrong/expired schema or value."}]}]""",
+    """"oem_data_additions":[{"attr_id":"Z8/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-time","error_msg":"Invalid end_time (2021-08-21T08:05:26) due to it before the create_time (2021-11-25T03:45:06)."},{"error_code":"EC-HCC-DC-time","error_msg":"Invalid end_time (2021-08-21T08:05:26) due to it smaller than the input time""",
+    """"oem_data_additions":[{"attr_id":"Z8/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-time","error_msg":"Invalid end_time (2021-08-21T08:05:26) due to it before the start_time (2021-11-25T03:45:06)."},{"error_code":"EC-HCC-DC-time","error_msg":"Invalid end_time (2021-08-21T08:05:26) due to it smaller than the input time""",
+    """plus 15min.""",
+    """"oem_data_additions":[{"attr_id":"E3/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-time","error_msg":"Invalid create_time (2021-11-25 03:45:06) due to the wrong/expired schema or value."}]}]""",
+    """"oem_data_additions":[{"attr_id":"B3ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-attrID","error_msg":"Invalid attr_id (B3ccEEtEey3Idie8zwxiw==) due to failed decoded with base64."}]""",
+    """"oem_data_additions":[{"attr_id":"MTIzNA==","attribute_errors":[{"error_code":"EC-HCC-DC-attrID","error_msg":"attr_id value not a size of 16 byte after decoded with base64"}]}]""",
+    """"oem_data_additions":[{"attr_id":null,"attribute_errors":[{"error_code":"EC-HCC-DC-field","error_msg":"The following fields are missing or empty:attr_id"}]}]""",
+    """"oem_data_additions":[{"attr_id":"","attribute_errors":[{"error_code":"EC-HCC-DC-field","error_msg":"The following fields are missing or empty:attr_id"}]}]""",
+    """"oem_data_additions":[{"attr_id":"H1/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-attrID","error_msg":"a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique"}]}]""",
+    """"oem_data_additions":[{"attr_id":"E3/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-payload","error_msg":"Invalid payload (?EEE) due to failed decoded with base64."}]}]""",
+    """decoded size > 1024 byte.""",
+    """decoded size > 65535 byte."""
+]
+
+# HCI 字段校验文件和errorlog
+CHECK_FIELD_HCI_ERRORLOG_LIST = [
+    """"basic_info_errors":[{"error_code":"EC-OSO-DC-file","error_msg":"Invalid input file due to file size > 4 Mb."}]""",
+    """"basic_info_errors":[{"error_code":"EC-HCI-DC-msgType","error_msg":"The following fields(msg_type) could not be resolve successfully, please check the field value."}]""",
+    """"basic_info_errors":[{"error_code":"EC-HCI-DC-msgType","error_msg":"The following fields(msg_type) could not be resolve successfully, please check the field value."}]""",
+    """"basic_info_errors":[{"error_code":"EC-HCI-DC-msgType","error_msg":"The following fields(msg_type) could not be resolve successfully, please check the field value."}]""",
+    """"basic_info_errors":[{"error_code":"EC-OSO-DC-providerID","error_msg":"Invalid volatile_provider_id (171)."}]""",
+    """"basic_info_errors":[{"error_code":"field","error_msg":"The following fields are missing or empty:volatile_provider_id"}]""",
+    """"basic_info_errors":[{"error_code":"WC-HCI-DC-field","error_msg":"The following fields are missing or empty:map_version"}]""",
+    """"basic_info_errors":[{"error_code":"WC-HCI-DC-field","error_msg":"The following fields are missing or empty:map_version"}]""",
+    """"basic_info_errors":[{"error_code":"EC-HCI-DC-field","error_msg":"The following fields are missing or empty:volatileLocationChanges"}]""",
+    """"volatile_location_id_errors":[{"error_code":"EC-HCI-DC-volloc","error_msg":"Invalid volatile_location_id (10000000) due to it not exists in the HD NDS map(nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler) with version 86."}]""",
+    """"oem_data_deletions":[{"error_code":"EC-HCI-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
+    """"oem_data_deletions":[{"error_code":"EC-HCI-DC-attrID","error_msg":"Invalid oem data deletions due to attr id(H0/ccEEtEey3Idie8zwxiw==) with provider ID""",
+    """"oem_data_deletions":[{"error_code":"EC-HCI-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCI-DC-attrLocation","error_msg":"Invalid start_offset (-1) due to the wrong value."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCI-DC-attrLocation","error_msg":"Invalid end_offset (-1) due to the wrong value."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCI-DC-attrLocation","error_msg":"Invalid attr_length (-1) due to the wrong value."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCI-DC-attrLocation","error_msg":"Invalid oem data attribute due to the calculated attr length(7) less than 10m and it not extend over the complete volatile location."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCI-DC-attrLocation","error_msg":"Invalid attr_length (18)  due to the difference between it and the calculated attr length(27) greater than 5m."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCI-DC-time","error_msg":"Invalid start_time (2021-08-21 08:05:26) due to the wrong value."}]""",
+    """"attribute_errors":[{"error_code":"EC-HCI-DC-time","error_msg":"Invalid end_time (2121-08-21 08:05:26) due to the wrong/expired schema or value."}]""",
+    """"oem_data_additions":[{"attr_id":"Z8/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCI-DC-field","error_msg":"The following fields are missing or empty:end_time"}]}]""",
+    """"oem_data_additions":[{"attr_id":"Z0/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCI-DC-time","error_msg":"Invalid end_time (null) due to the wrong/expired schema or value."}]}]""",
+    """"oem_data_additions":[{"attr_id":"Z8/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCI-DC-time","error_msg":"Invalid end_time (2021-08-21T08:05:26) due to it before the create_time (2021-11-25T03:45:06)."},{"error_code":"EC-HCI-DC-time","error_msg":"Invalid end_time (2021-08-21T08:05:26) due to it smaller than the input time""",
+    """"oem_data_additions":[{"attr_id":"Z8/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCI-DC-time","error_msg":"Invalid end_time (2021-08-21T08:05:26) due to it before the start_time (2021-11-25T03:45:06)."},{"error_code":"EC-HCI-DC-time","error_msg":"Invalid end_time (2021-08-21T08:05:26) due to it smaller than the input time""",
+    """plus 15min.""",
+    """"oem_data_additions":[{"attr_id":"E3/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCI-DC-time","error_msg":"Invalid create_time (2021-11-25 03:45:06) due to the wrong/expired schema or value."}]}]""",
+    """"oem_data_additions":[{"attr_id":"B3ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCI-DC-attrID","error_msg":"Invalid attr_id (B3ccEEtEey3Idie8zwxiw==) due to failed decoded with base64."}]""",
+    """"oem_data_additions":[{"attr_id":"MTIzNA==","attribute_errors":[{"error_code":"EC-HCI-DC-attrID","error_msg":"attr_id value not a size of 16 byte after decoded with base64"}]}]""",
+    """"oem_data_additions":[{"attr_id":null,"attribute_errors":[{"error_code":"EC-HCI-DC-field","error_msg":"The following fields are missing or empty:attr_id"}]}]""",
+    """"oem_data_additions":[{"attr_id":"","attribute_errors":[{"error_code":"EC-HCI-DC-field","error_msg":"The following fields are missing or empty:attr_id"}]}]""",
+    """"oem_data_additions":[{"attr_id":"H1/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCI-DC-attrID","error_msg":"a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique"}]}]""",
+    """"oem_data_additions":[{"attr_id":"E3/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCI-DC-payload","error_msg":"Invalid payload (?EEE) due to failed decoded with base64."}]}]""",
+    """decoded size > 1024 byte.""",
+    """decoded size > 65535 byte."""
+]
+
+# pycharm无法验证字段重复，postman正常
+BACKUP_ERROR_LIST = [
+    """"basic_info_errors":[{"error_code":"EC-HCC-DC-field","error_msg":"the following fields are duplicate: volatile_provider_id"}]""",
+    """"basic_info_errors":[{"error_code":"EC-HCC-DC-field","error_msg":"the following fields are duplicate: start_time"}]""",
+
 ]

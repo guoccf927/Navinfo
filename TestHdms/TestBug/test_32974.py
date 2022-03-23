@@ -52,7 +52,7 @@ class Base(TestBaseFunc):
 
 class Test_32974:
     """
-    取出rcsint|rcsext|hcc 正式线|测试线 字段缺失时的errorlog
+    取出rcsint|rcsext|hcc 正式线|测试线 字段缺失时的 errorlog
     """
 
     def test_rcsint_prod_01(self):

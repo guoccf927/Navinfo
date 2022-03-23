@@ -6,8 +6,6 @@ from TestHdms.Base.basefunc_test import *
 
 # filepath = r"D:\Download\557027723-trfregs-正式线-0308-不一致"
 filepath = r"D:\Download\null (8)"
-# filepath = r"D:\Download\557038792"
-
 
 def getsha256(filepath):
     file = open(filepath, 'rb')

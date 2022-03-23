@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time        :2022/3/21 16:48
 # @Author      :guocongcong7572@navinfo.com
-# @Description :字段缺失校验
+# @Description :字段缺失校验,其中"msg_id"字段缺失不报错
 
 from TestHdms.Base.basefunc_test import *
 
@@ -43,11 +43,11 @@ class Base(TestBaseFunc):
                     for j in range(LOOP_NUM):
                         res_err = self.get_errorlog(self.catalog_id, self.error_layer_id)
                         if trace_id in res_err:
-                            assert self.error_log_list[i-2] in res_err, f'{file_list[i]} 日志错误'
                             print('\n')
                             break
                         time.sleep(TIME_SLEEP)
                         print(f"循环{j + 1}*{str(TIME_SLEEP)}s,还没找到对应的日志")
+                    assert self.error_log_list[i - 1] in res_err, f'{file_list[i]} 日志错误'
 
 
 class TestDataCheckMiss:
