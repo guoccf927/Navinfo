@@ -1,0 +1,22 @@
+----20220323----
+1、msg_id字段缺失时未报错，给了一个默认值null；且为null时也不报错——未对该字段进行校验
+2、使用pycharm无法进行字段重复的校验，不会出现报错信息，postman正常
+
+----20211224----
+1、create_time、nds_packed_tile_id、attr_id、payload、volatile_provider_id、map_version缺失和null、""，error code和msg一样——产品：可接受
+其中，end_time不一致，缺失时报错的是file
+2、msg_id 字段缺失时未报错，给了一个默认值null——产品：不在检查范围内，可接受
+3、msg_type 字段缺失时，报错信息冗余——产品：不关注 
+4、volatile_provider_id 字段缺失、null、“”时，error code是filed——提给产品，延期处理
+预期：EC-RCSINT-DC-field
+d4d6cfaf-2018-4294-a320-b53dc7fa0086
+"basic_info_errors":[{"error_code":"field","error_msg":"The following fields are missing or empty:volatile_provider_id"}]
+5、start_time rcs中存在多余的start_time字段，报错信息不明确'basic_info_errors': [{'error_code': '', 'error_msg': 'the following fields are redundant: {}'}]——产品：不关注
+6、end_time < create_time 场景，由于end_time需要大于当前时间，create_time 需要小于当前时间，导致构造的场景会受到其他限制条件影响，提示信息是否可接受——产品：可接受
+"tileId_timestamp_errors":[{"error_code":"EC-RCSINT-DC-time","error_msg":"Invalid end_time (2021-03-04T08:13:00) due to the wrong/expired schema or value."}]
+7、tile_deletions 字段为空时，errorlog提示信息不明确——提给开发，优先级低
+7a494922-c7a0-4b7a-9f2d-39d57accada9
+'basic_info_errors': [{'error_code': '', 'error_msg': 'the following fields are redundant: {}'}]
+8、attr_id 字段小于16byte时，提示信息和需求中的场景一致，应该和error_msg一致——产品：可接受
+"oem_data_additions":[{"attr_id":"MTIzNA==","volatile_location_id":10016295,"attribute_errors":[{"error_code":"EC-RCSINT-DC-attrID","error_msg":"attr_id value not a size of 16 byte after decoded with base64"}]}]
+9、rcs-int类型json文件大于4Mb时，没有日志产生，暂时不关注（rcs-ext类型，有错误日志且日志error_code和error_msg正确）

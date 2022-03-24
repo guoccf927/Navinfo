@@ -1,0 +1,22 @@
+{
+	"msg_id": "nYeldssxEemBrBheDxK4cA==",
+	"msg_type": "REPLACE_TILES",
+	"volatile_provider_id": 103,
+	"map_version": "nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0",
+	"tile_replacements": [
+		{
+			"nds_packed_tile_id": 557017790,
+			"created_time": "2021-03-05T08:13:00",
+			"oem_data_additions": [
+				{
+					"volatile_location_id": 10016294,
+					"start_offset": 100,
+					"end_offset": 388,
+					"attr_length": 100,
+					"attr_id": "K0/ccEEtEey3Idie8zwxiw==",
+					"payload": "AA/"
+				}
+			]
+		}
+	]
+}

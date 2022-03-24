@@ -1,0 +1,14 @@
+{
+	"msg_id": "oem_data_additions 为空",
+	"msg_type": "REPLACE_TILES",
+	"volatile_provider_id": 103,
+	"map_version": "nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0",
+	"tile_replacements": [
+		{
+			"nds_packed_tile_id": 557358066,
+			"created_time": "2021-03-05T08:17:00",
+			"end_time": "2122-01-08T12:30:00",
+			"oem_data_additions": []
+		}
+	]
+}

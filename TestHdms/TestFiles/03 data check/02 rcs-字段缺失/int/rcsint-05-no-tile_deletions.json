@@ -1,0 +1,5 @@
+{
+	"msg_id": "删除类型 tile_deletions为空",
+	"msg_type": "DELETE_TILES",
+	"volatile_provider_id": 103
+}

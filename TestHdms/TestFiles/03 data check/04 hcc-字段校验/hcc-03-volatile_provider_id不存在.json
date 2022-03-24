@@ -1,0 +1,23 @@
+{
+	"msg_id": "1YeldssxEemBrBheDxK4cA==",
+	"msg_type": "UPDATE_ATTRIBUTES",
+	"volatile_provider_id": 171,
+	"map_version": "nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0",
+	"volatile_location_changes": [
+		{
+			"volatile_location_id": 10004773,
+			"oem_data_additions": [
+				{
+					"start_offset": 1,
+					"end_offset": 11,
+					"attr_length": 476,
+					"start_time": "2021-08-24T07:55:26",
+					"end_time": "2122-05-01T08:05:26",
+					"created_time": "2021-04-01T07:05:26",
+					"attr_id": "Z0/ccEEtEey3Idie8zwxiw==",
+					"payload": "1AH/"
+				}
+			]
+		}
+	]
+}

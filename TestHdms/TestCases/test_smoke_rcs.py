@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # @Time        :2022/1/19 14:44
 # @Author      :guocongcong7572@navinfo.com
-# @Description : rcs冒烟测试
+# @Description : rcs冒烟测试-第一个脚本，未使用类的继承，存在代码冗余
 
 from TestHdms.Base.basefunc_test import *
 
-FILE_LIST_DIR = r'E:/03 HDMS/98 测试文件/02 rcs-prod-int'
+FILE_LIST_DIR = '../TestFiles/01 rcs-prod-int'
 NO_END_TIME_ERR_LIST = [
     """"tile_replacements":[{"nds_packed_tile_id":"557017790","tileId_timestamp_errors":[{"error_code":"EC-RCSINT-DC-time","error_msg":"Invalid end time due to the field missing , empty or its invalid value."}],"oem_data_additions":null}]""",
     """"tile_replacements":[{"nds_packed_tile_id":"557017790","tileId_timestamp_errors":[{"error_code":"EC-RCSEXT-DC-time","error_msg":"Invalid end time due to the field missing , empty or its invalid value."}],"oem_data_additions":null}]""",

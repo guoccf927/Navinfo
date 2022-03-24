@@ -7,6 +7,7 @@ from TestHdms.Base.basefunc_test import *
 
 LOOP_NUM = 10
 TIME_SLEEP = 3
+DATA_CHECK_FILE_DIR = '../TestFiles/03 data check'
 
 
 class Base(TestBaseFunc):
@@ -52,7 +53,7 @@ class Base(TestBaseFunc):
 
 class TestDataCheckMiss:
     """
-    取出rcsint|rcsext|hcc 正式线|测试线 字段缺失时的errorlog
+    取出rcsint|rcsext|hcc|hci 正式线|测试线 字段缺失时的errorlog
     """
 
     def test_rcsint_prod_01(self):
@@ -62,7 +63,7 @@ class TestDataCheckMiss:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/02 rcs-字段缺失/int'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/02 rcs-字段缺失/int'
         Base(CATALOG_RCSINT, TRACEID_LAYER_RCSINT, ERROR_LAYER_RCSINT, file_dir, MISS_FIELD_RCSINT_ERRORLOG_LIST)
 
     def test_rcsext_prod_02(self):
@@ -72,7 +73,7 @@ class TestDataCheckMiss:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/02 rcs-字段缺失/ext'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/02 rcs-字段缺失/ext'
         Base(CATALOG_RCSEXT, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, MISS_FIELD_RCSEXT_ERRORLOG_LIST)
 
     def test_hcc_prod_03(self):
@@ -82,7 +83,7 @@ class TestDataCheckMiss:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/03 hcc-字段缺失/hcc'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/03 hcc-字段缺失/hcc'
         Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, MISS_FIELD_HCC_ERRORLOG_LIST)
 
     def test_hci_prod_04(self):
@@ -92,7 +93,7 @@ class TestDataCheckMiss:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/03 hcc-字段缺失/hci'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/03 hcc-字段缺失/hci'
         Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, MISS_FIELD_HCI_ERRORLOG_LIST)
 
     def test_rcsint_int_05(self):
@@ -102,7 +103,7 @@ class TestDataCheckMiss:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/02 rcs-字段缺失/int'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/02 rcs-字段缺失/int'
         Base(CATALOG_RCSINT_TEST, TRACEID_LAYER_RCSINT, ERROR_LAYER_RCSINT, file_dir, MISS_FIELD_RCSINT_ERRORLOG_LIST)
 
     def test_rcsext_int_06(self):
@@ -112,7 +113,7 @@ class TestDataCheckMiss:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/02 rcs-字段缺失/ext'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/02 rcs-字段缺失/ext'
         Base(CATALOG_RCSEXT_TEST, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, MISS_FIELD_RCSEXT_ERRORLOG_LIST)
 
     def test_hcc_int_07(self):
@@ -122,7 +123,7 @@ class TestDataCheckMiss:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/03 hcc-字段缺失/hcc'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/03 hcc-字段缺失/hcc'
         Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, MISS_FIELD_HCC_ERRORLOG_LIST)
 
     def test_hci_int_08(self):
@@ -132,5 +133,5 @@ class TestDataCheckMiss:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/03 hcc-字段缺失/hci'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/03 hcc-字段缺失/hci'
         Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, MISS_FIELD_HCI_ERRORLOG_LIST)

@@ -1,0 +1,1 @@
+{"msg_id": "no oem_data_deletions", "msg_type": "UPDATE_ATTRIBUTES", "volatile_provider_id": 117, "map_version": "nrn:navinfo:data:::HDMap-NDS-2.5.4-Germany-Daimler;29", "volatile_location_changes": [{"volatile_location_id": 10016295, "oem_data_deletions": ["H0/ccEEtEey3Idie8zwxiw=="]}]}

@@ -1,0 +1,374 @@
+D:\PycharmProjects\GccProject\Scripts\python.exe "D:\tools\PyCharm 2021.2\plugins\python\helpers\pycharm\_jb_pytest_runner.py" --target test_rcs_prod_int.py::TestRcsSmoke
+Testing started at 10:07 ...
+Launching pytest with arguments test_rcs_prod_int.py::TestRcsSmoke --no-header --no-summary -q in D:\PycharmProjects\Navinfo\TestHdms\TestCases
+
+============================= test session starts =============================
+collecting ... collected 20 items
+
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_init 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_prod_01_publish 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_prod_02_update 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_prod_03_errorlog 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_prod_04_delete 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_prod_05_backup 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_int_01_publish 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_int_02_update 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_int_03_errorlog 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsint_int_04_delete 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsext_init 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsext_prod_01_publish 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsext_prod_02_update 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsext_prod_03_errorlog 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsext_prod_04_delete 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsext_int_01_publish 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsext_int_02_update 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsext_int_03_errorlog 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcsext_int_04_delete 
+test_rcs_prod_int.py::TestRcsSmoke::test_rcs_clear 
+
+================== 19 passed, 1 skipped in 89.51s (0:01:29) ===================
+
+Process finished with exit code 0
+PASSED              [  5%]
+当前用例名称： test_rcsint_init
+trace_id: 90f22709-a633-4f9b-b7bd-555f7f8dd021
+trace_id: 6c34ab61-7542-44b0-8aba-865056e0e90e
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557017790/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557038792/total_num: 0
+[0, 0, 0]
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557017790/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557038792/total_num: 0
+[0, 0, 0]
+['oso:cloud_test:rcs:attrids:103_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_A1/ccEEtEey3Idie8zwxiw==']
+[]
+[]
+PASSED   [ 10%]
+当前用例名称： test_rcsint_prod_01_publish
+[557042475, 557038792, 557017790]
+['A0/ccEEtEey3Idie8zwxiw==', 'A1/ccEEtEey3Idie8zwxiw==', 'B0/ccEEtEey3Idie8zwxiw==', 'C0/ccEEtEey3Idie8zwxiw==']
+rcsint 正式线 557038792的过期时间：2022-02-14T02:24:49
+trace_id: 91685484-38c5-4658-aebb-9f386ee29d6b
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557017790/total_num: 0
+[0, 0, 0]
+rcsint 正式线tile存在发布失败，等待3s * 1
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557017790/total_num: 0
+[0, 0, 0]
+rcsint 正式线tile存在发布失败，等待3s * 2
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557017790/total_num: 0
+[0, 0, 0]
+rcsint 正式线tile存在发布失败，等待3s * 3
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557042475/total_num: 1
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557038792/total_num: 1
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557017790/total_num: 1
+[1, 1, 1]
+True
+['oso:cloud_test:rcs:attrids:103_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_A1/ccEEtEey3Idie8zwxiw==']
+True
+[('557038792', 1644805489000.0), ('557042475', 1735712420000.0), ('557017790', 1735715720000.0), ('554688972', 1759147200000.0), ('554688974', 1759147200000.0), ('554688975', 1759147200000.0), ('554688986', 1759147200000.0), ('554689008', 1759147200000.0), ('554689009', 1759147200000.0), ('554689011', 1759147200000.0), ('554689014', 1759147200000.0), ('554689015', 1759147200000.0), ('554689067', 1759147200000.0), ('554689070', 1759147200000.0), ('554689071', 1759147200000.0), ('554689082', 1759147200000.0), ('554689083', 1759147200000.0), ('554689084', 1759147200000.0), ('554689085', 1759147200000.0), ('554689086', 1759147200000.0), ('554689115', 1759147200000.0), ('554689117', 1759147200000.0), ('554689118', 1759147200000.0), ('554689119', 1759147200000.0), ('554689122', 1759147200000.0), ('554689123', 1759147200000.0), ('554689124', 1759147200000.0), ('554689125', 1759147200000.0), ('554689126', 1759147200000.0), ('554689128', 1759147200000.0), ('554689136', 1759147200000.0), ('554689137', 1759147200000.0), ('554689281', 1759147200000.0), ('554689282', 1759147200000.0), ('554689283', 1759147200000.0), ('554689284', 1759147200000.0), ('554689285', 1759147200000.0), ('554689287', 1759147200000.0), ('554689288', 1759147200000.0), ('554689293', 1759147200000.0), ('554689304', 1759147200000.0), ('554689306', 1759147200000.0), ('554689307', 1759147200000.0), ('554690093', 1759147200000.0), ('554690097', 1759147200000.0), ('554690099', 1759147200000.0), ('554690100', 1759147200000.0), ('554690104', 1759147200000.0), ('554690105', 1759147200000.0), ('554690106', 1759147200000.0), ('554690107', 1759147200000.0), ('554690120', 1759147200000.0), ('554690121', 1759147200000.0), ('554690123', 1759147200000.0), ('554690126', 1759147200000.0), ('554690148', 1759147200000.0), ('554690149', 1759147200000.0), ('554690160', 1759147200000.0), ('554690162', 1759147200000.0), ('554690163', 1759147200000.0), ('554690166', 1759147200000.0), ('554690167', 1759147200000.0), ('554690193', 1759147200000.0), ('554690195', 1759147200000.0), ('554690198', 1759147200000.0), ('554690204', 1759147200000.0), ('554690205', 1759147200000.0), ('554690248', 1759147200000.0), ('554690250', 1759147200000.0), ('554690251', 1759147200000.0), ('554690273', 1759147200000.0), ('554690276', 1759147200000.0), ('554690278', 1759147200000.0), ('554690279', 1759147200000.0), ('554690290', 1759147200000.0), ('554690291', 1759147200000.0), ('554690297', 1759147200000.0), ('554690300', 1759147200000.0), ('554690301', 1759147200000.0), ('554690338', 1759147200000.0), ('554690339', 1759147200000.0), ('554690342', 1759147200000.0), ('554690343', 1759147200000.0)]
+['557038792', '557042475', '557017790', '554688972', '554688974', '554688975', '554688986', '554689008', '554689009', '554689011', '554689014', '554689015', '554689067', '554689070', '554689071', '554689082', '554689083', '554689084', '554689085', '554689086', '554689115', '554689117', '554689118', '554689119', '554689122', '554689123', '554689124', '554689125', '554689126', '554689128', '554689136', '554689137', '554689281', '554689282', '554689283', '554689284', '554689285', '554689287', '554689288', '554689293', '554689304', '554689306', '554689307', '554690093', '554690097', '554690099', '554690100', '554690104', '554690105', '554690106', '554690107', '554690120', '554690121', '554690123', '554690126', '554690148', '554690149', '554690160', '554690162', '554690163', '554690166', '554690167', '554690193', '554690195', '554690198', '554690204', '554690205', '554690248', '554690250', '554690251', '554690273', '554690276', '554690278', '554690279', '554690290', '554690291', '554690297', '554690300', '554690301', '554690338', '554690339', '554690342', '554690343']
+True
+PASSED    [ 15%]
+当前用例名称： test_rcsint_prod_02_update
+['M0/ccEEtEey3Idie8zwxiw==', 'M1/ccEEtEey3Idie8zwxiw==']
+trace_id: 5a3181de-dfdd-4f5d-8308-78c408359dcc
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557042475/total_num: 1
+2022/02/14 02:07:56
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557017790/total_num: 1
+2022/02/14 02:07:56
+['2022/02/14 02:07:56', '2022/02/14 02:07:56']
+hdms平台 rcsint 正式线-557042475 时间更新失败，等待3s * 1
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557042475/total_num: 1
+2022/02/14 02:07:56
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557017790/total_num: 1
+2022/02/14 02:07:56
+['2022/02/14 02:07:56', '2022/02/14 02:07:56']
+hdms平台 rcsint 正式线-557042475 时间更新失败，等待3s * 2
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557042475/total_num: 1
+2022/02/14 02:08:05
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557017790/total_num: 1
+2022/02/14 02:07:56
+['2022/02/14 02:08:05', '2022/02/14 02:07:56']
+{'tileId': '557042475', 'endTime': 1766624480000, 'updateTime': 1644804485881, 'attrids': ['M0/ccEEtEey3Idie8zwxiw==', 'M1/ccEEtEey3Idie8zwxiw==']}
+['oso:cloud_test:rcs:attrids:103_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_M0/ccEEtEey3Idie8zwxiw==']
+True
+[('557038792', 1644805489000.0), ('557017790', 1735715720000.0), ('554688972', 1759147200000.0), ('554688974', 1759147200000.0), ('554688975', 1759147200000.0), ('554688986', 1759147200000.0), ('554689008', 1759147200000.0), ('554689009', 1759147200000.0), ('554689011', 1759147200000.0), ('554689014', 1759147200000.0), ('554689015', 1759147200000.0), ('554689067', 1759147200000.0), ('554689070', 1759147200000.0), ('554689071', 1759147200000.0), ('554689082', 1759147200000.0), ('554689083', 1759147200000.0), ('554689084', 1759147200000.0), ('554689085', 1759147200000.0), ('554689086', 1759147200000.0), ('554689115', 1759147200000.0), ('554689117', 1759147200000.0), ('554689118', 1759147200000.0), ('554689119', 1759147200000.0), ('554689122', 1759147200000.0), ('554689123', 1759147200000.0), ('554689124', 1759147200000.0), ('554689125', 1759147200000.0), ('554689126', 1759147200000.0), ('554689128', 1759147200000.0), ('554689136', 1759147200000.0), ('554689137', 1759147200000.0), ('554689281', 1759147200000.0), ('554689282', 1759147200000.0), ('554689283', 1759147200000.0), ('554689284', 1759147200000.0), ('554689285', 1759147200000.0), ('554689287', 1759147200000.0), ('554689288', 1759147200000.0), ('554689293', 1759147200000.0), ('554689304', 1759147200000.0), ('554689306', 1759147200000.0), ('554689307', 1759147200000.0), ('554690093', 1759147200000.0), ('554690097', 1759147200000.0), ('554690099', 1759147200000.0), ('554690100', 1759147200000.0), ('554690104', 1759147200000.0), ('554690105', 1759147200000.0), ('554690106', 1759147200000.0), ('554690107', 1759147200000.0), ('554690120', 1759147200000.0), ('554690121', 1759147200000.0), ('554690123', 1759147200000.0), ('554690126', 1759147200000.0), ('554690148', 1759147200000.0), ('554690149', 1759147200000.0), ('554690160', 1759147200000.0), ('554690162', 1759147200000.0), ('554690163', 1759147200000.0), ('554690166', 1759147200000.0), ('554690167', 1759147200000.0), ('554690193', 1759147200000.0), ('554690195', 1759147200000.0), ('554690198', 1759147200000.0), ('554690204', 1759147200000.0), ('554690205', 1759147200000.0), ('554690248', 1759147200000.0), ('554690250', 1759147200000.0), ('554690251', 1759147200000.0), ('554690273', 1759147200000.0), ('554690276', 1759147200000.0), ('554690278', 1759147200000.0), ('554690279', 1759147200000.0), ('554690290', 1759147200000.0), ('554690291', 1759147200000.0), ('554690297', 1759147200000.0), ('554690300', 1759147200000.0), ('554690301', 1759147200000.0), ('554690338', 1759147200000.0), ('554690339', 1759147200000.0), ('554690342', 1759147200000.0), ('554690343', 1759147200000.0), ('557042475', 1766624480000.0)]
+tile_id: 557042475
+expires: 2025-12-25T01:01:20
+2025-12-25T01:01:20
+PASSED  [ 20%]
+当前用例名称： test_rcsint_prod_03_errorlog
+['N0/ccEEtEey3Idie8zwxiw==']
+trace_id: 5e36af1b-8143-4670-9174-3561d6f55bc4
+dataHandle: f79d1db810ac4a05ada21a21314deabe
+{"error_timestamp":"2022-02-14T02:05:35","upload_id":"8f54e763-3b34-46d9-af89-1bb562f01d7c","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSINT-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"tile_replacements":null}
+还没找到对应的日志，等待1*3s
+dataHandle: a7709ee2894f4cf3b03ec31734e45b2b
+{"error_timestamp":"2022-02-14T02:08:06","upload_id":"5e36af1b-8143-4670-9174-3561d6f55bc4","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSINT-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"tile_replacements":null}
+['oso:cloud_test:rcs:attrids:103_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_M0/ccEEtEey3Idie8zwxiw==']
+False
+PASSED    [ 25%]
+当前用例名称： test_rcsint_prod_04_delete
+trace_id: bf5960a0-77b0-41a4-be2c-28d689b7e478
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsint/557017790/total_num: 0
+[0]
+SKIPPED   [ 30%]
+Skipped: unconditional skip
+PASSED    [ 35%]
+当前用例名称： test_rcsint_int_01_publish
+[557042475, 557038792, 557017790]
+['A0/ccEEtEey3Idie8zwxiw==', 'A1/ccEEtEey3Idie8zwxiw==', 'B0/ccEEtEey3Idie8zwxiw==', 'C0/ccEEtEey3Idie8zwxiw==']
+rcsint 测试线 557038792的过期时间：2022-02-14T02:28:10
+trace_id: 2249b9d8-7778-4fc4-9ec8-530f708529e5
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557017790/total_num: 0
+[0, 0, 0]
+rcsint 测试线tile存在发布失败，等待3s * 1
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557017790/total_num: 0
+[0, 0, 0]
+rcsint 测试线tile存在发布失败，等待3s * 2
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557017790/total_num: 0
+[0, 0, 0]
+rcsint 测试线tile存在发布失败，等待3s * 3
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557042475/total_num: 1
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557038792/total_num: 1
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557017790/total_num: 1
+[1, 1, 1]
+True
+['oso:cloud_test_int:rcs:attrids:103_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_B0/ccEEtEey3Idie8zwxiw==']
+True
+[('557038792', 1644805690000.0), ('557042475', 1735712420000.0), ('557017790', 1735715720000.0)]
+['557038792', '557042475', '557017790']
+True
+PASSED     [ 40%]
+当前用例名称： test_rcsint_int_02_update
+['M0/ccEEtEey3Idie8zwxiw==', 'M1/ccEEtEey3Idie8zwxiw==']
+trace_id: 9948018b-103c-4c60-8396-076f621e0f88
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557042475/total_num: 1
+2022/02/14 02:08:17
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557017790/total_num: 1
+2022/02/14 02:08:17
+['2022/02/14 02:08:17', '2022/02/14 02:08:17']
+hdms平台 rcsint 测试线-557042475 时间更新失败，等待3s * 1
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557042475/total_num: 1
+2022/02/14 02:08:17
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557017790/total_num: 1
+2022/02/14 02:08:17
+['2022/02/14 02:08:17', '2022/02/14 02:08:17']
+hdms平台 rcsint 测试线-557042475 时间更新失败，等待3s * 2
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557042475/total_num: 1
+2022/02/14 02:08:25
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557017790/total_num: 1
+2022/02/14 02:08:17
+['2022/02/14 02:08:25', '2022/02/14 02:08:17']
+{'tileId': '557042475', 'endTime': 1766624480000, 'updateTime': 1644804505375, 'attrids': ['M0/ccEEtEey3Idie8zwxiw==', 'M1/ccEEtEey3Idie8zwxiw==']}
+['oso:cloud_test_int:rcs:attrids:103_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_M0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_B0/ccEEtEey3Idie8zwxiw==']
+True
+[('557038792', 1644805690000.0), ('557017790', 1735715720000.0), ('557042475', 1766624480000.0)]
+tile_id: 557042475
+expires: 2025-12-25T01:01:20
+2025-12-25T01:01:20
+PASSED   [ 45%]
+当前用例名称： test_rcsint_int_03_errorlog
+['N0/ccEEtEey3Idie8zwxiw==']
+trace_id: 24bd7c89-8d28-4153-a5e8-c886090b504a
+dataHandle: b255e0a96fd7456cb679cf75880fbcb7
+{"error_timestamp":"2022-01-29T03:44:42","upload_id":"6fffc0af-0363-4e85-982b-1db833bb47ab","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSINT-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"tile_replacements":null}
+还没找到对应的日志，等待1*3s
+dataHandle: 25c167c62a32414ca2d830f70bddb60a
+{"error_timestamp":"2022-02-14T02:08:26","upload_id":"24bd7c89-8d28-4153-a5e8-c886090b504a","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSINT-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"tile_replacements":null}
+['oso:cloud_test_int:rcs:attrids:103_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_M0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_B0/ccEEtEey3Idie8zwxiw==']
+False
+PASSED     [ 50%]
+当前用例名称： test_rcsint_int_04_delete
+trace_id: 67791bfa-1024-41a8-b30d-63582cb7b4cc
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsint/557017790/total_num: 0
+[0]
+PASSED              [ 55%]
+当前用例名称： test_rcsext_init
+['log.txt', 'rcs-01-int-删除.json', 'rcs-02-3个tile发布-557042475-557038792-557017790.json', 'rcs-03-557042475-更新新的link.json', 'rcs-04-no-end_time.json', 'rcs-04-删除557017790.json']
+文件名称为： rcs-01-int-删除.json
+文件名称为： rcs-02-3个tile发布-557042475-557038792-557017790.json
+文件名称为： rcs-03-557042475-更新新的link.json
+文件名称为： rcs-04-no-end_time.json
+文件名称为： rcs-04-删除557017790.json
+trace_id: a8acf4cd-1904-4229-8e39-37c517ab5339
+trace_id: 3c534b19-bb8d-4e65-8528-78ef56398f38
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557017790/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557038792/total_num: 0
+[0, 0, 0]
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557017790/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557038792/total_num: 0
+[0, 0, 0]
+[]
+[]
+PASSED   [ 60%]
+当前用例名称： test_rcsext_prod_01_publish
+[557042475, 557038792, 557017790]
+['A0/ccEEtEey3Idie8zwxiw==', 'A1/ccEEtEey3Idie8zwxiw==', 'B0/ccEEtEey3Idie8zwxiw==', 'C0/ccEEtEey3Idie8zwxiw==']
+rcsext 正式线 557038792的过期时间：2022-02-14T02:25:36
+trace_id: f564e4b9-68f1-4403-9e4b-d2e76924a2eb
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557017790/total_num: 0
+[0, 0, 0]
+rcsext 正式线tile存在发布失败，等待3s * 1
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557017790/total_num: 0
+[0, 0, 0]
+rcsext 正式线tile存在发布失败，等待3s * 2
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557042475/total_num: 1
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557038792/total_num: 1
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557017790/total_num: 1
+[1, 1, 1]
+True
+['oso:cloud_test:rcs:attrids:108_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_A0/ccEEtEey3Idie8zwxiw==']
+True
+[('557038792', 1644805536000.0), ('557042475', 1735712420000.0), ('557017790', 1735715720000.0)]
+['557038792', '557042475', '557017790']
+True
+PASSED    [ 65%]
+当前用例名称： test_rcsext_prod_02_update
+['M0/ccEEtEey3Idie8zwxiw==', 'M1/ccEEtEey3Idie8zwxiw==']
+trace_id: 078556da-02e9-4e70-9cf3-d28ee80664a4
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557042475/total_num: 1
+2022/02/14 02:08:41
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557017790/total_num: 1
+2022/02/14 02:08:41
+['2022/02/14 02:08:41', '2022/02/14 02:08:41']
+hdms平台 rcsext 正式线-557042475 时间更新失败，等待3s * 1
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557042475/total_num: 1
+2022/02/14 02:08:41
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557017790/total_num: 1
+2022/02/14 02:08:41
+['2022/02/14 02:08:41', '2022/02/14 02:08:41']
+hdms平台 rcsext 正式线-557042475 时间更新失败，等待3s * 2
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557042475/total_num: 1
+2022/02/14 02:08:48
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557017790/total_num: 1
+2022/02/14 02:08:41
+['2022/02/14 02:08:48', '2022/02/14 02:08:41']
+{'tileId': '557042475', 'endTime': 1766624480000, 'updateTime': 1644804529026, 'attrids': ['M0/ccEEtEey3Idie8zwxiw==', 'M1/ccEEtEey3Idie8zwxiw==']}
+['oso:cloud_test:rcs:attrids:108_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_M0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_A0/ccEEtEey3Idie8zwxiw==']
+True
+[('557038792', 1644805536000.0), ('557017790', 1735715720000.0), ('557042475', 1766624480000.0)]
+tile_id: 557042475
+expires: 2025-12-25T01:01:20
+2025-12-25T01:01:20
+PASSED  [ 70%]
+当前用例名称： test_rcsext_prod_03_errorlog
+['N0/ccEEtEey3Idie8zwxiw==']
+trace_id: 875ed82c-e7b0-4ef1-86f0-0c5e62cd3afa
+dataHandle: 9f3d89ea05fa4aab90ae71a09ba44652
+{"error_timestamp":"2022-01-29T03:45:05","upload_id":"5875b1b2-fab1-4c1b-ba6d-4fc97370e2fc","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSEXT-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"tile_replacements":null}
+还没找到对应的日志，等待1*3s
+dataHandle: bd3a4d54a8bf4c6fbd5b69c66ca4284a
+{"error_timestamp":"2022-02-14T02:08:49","upload_id":"875ed82c-e7b0-4ef1-86f0-0c5e62cd3afa","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSEXT-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"tile_replacements":null}
+['oso:cloud_test:rcs:attrids:108_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_M0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_A0/ccEEtEey3Idie8zwxiw==']
+False
+PASSED    [ 75%]
+当前用例名称： test_rcsext_prod_04_delete
+trace_id: e73d9915-431e-4de4-8fbc-85a088d2bdf2
+Volatiledata-NDS-2.5.4-China-Daimler/oem-rcsext/557017790/total_num: 0
+[0]
+PASSED    [ 80%]
+当前用例名称： test_rcsext_int_01_publish
+[557042475, 557038792, 557017790]
+['A0/ccEEtEey3Idie8zwxiw==', 'A1/ccEEtEey3Idie8zwxiw==', 'B0/ccEEtEey3Idie8zwxiw==', 'C0/ccEEtEey3Idie8zwxiw==']
+rcsint 正式线 557038792的过期时间：2022-02-14T02:28:53
+trace_id: 7b63c684-9bff-48a4-b1ba-63b7ff226493
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557017790/total_num: 0
+[0, 0, 0]
+rcsext 测试线tile存在发布失败，等待3s * 1
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557042475/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557038792/total_num: 0
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557017790/total_num: 0
+[0, 0, 0]
+rcsext 测试线tile存在发布失败，等待3s * 2
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557042475/total_num: 1
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557038792/total_num: 1
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557017790/total_num: 1
+[1, 1, 1]
+True
+['oso:cloud_test_int:rcs:attrids:108_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_A1/ccEEtEey3Idie8zwxiw==']
+True
+[('557038792', 1644805733000.0), ('557042475', 1735712420000.0), ('557017790', 1735715720000.0)]
+['557038792', '557042475', '557017790']
+True
+PASSED     [ 85%]
+当前用例名称： test_rcsext_int_02_update
+['M0/ccEEtEey3Idie8zwxiw==', 'M1/ccEEtEey3Idie8zwxiw==']
+trace_id: 6f03cc01-8a31-4acc-8f88-b8c469932d73
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557042475/total_num: 1
+2022/02/14 02:08:58
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557017790/total_num: 1
+2022/02/14 02:08:58
+['2022/02/14 02:08:58', '2022/02/14 02:08:58']
+hdms平台 rcsext 测试线-557042475 时间更新失败，等待3s * 1
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557042475/total_num: 1
+2022/02/14 02:08:58
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557017790/total_num: 1
+2022/02/14 02:08:58
+['2022/02/14 02:08:58', '2022/02/14 02:08:58']
+hdms平台 rcsext 测试线-557042475 时间更新失败，等待3s * 2
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557042475/total_num: 1
+2022/02/14 02:09:05
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557017790/total_num: 1
+2022/02/14 02:08:58
+['2022/02/14 02:09:05', '2022/02/14 02:08:58']
+{'tileId': '557042475', 'endTime': 1766624480000, 'updateTime': 1644804545414, 'attrids': ['M0/ccEEtEey3Idie8zwxiw==', 'M1/ccEEtEey3Idie8zwxiw==']}
+['oso:cloud_test_int:rcs:attrids:108_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_M0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_A1/ccEEtEey3Idie8zwxiw==']
+True
+[('557038792', 1644805733000.0), ('557017790', 1735715720000.0), ('557042475', 1766624480000.0)]
+tile_id: 557042475
+expires: 2025-12-25T01:01:20
+2025-12-25T01:01:20
+PASSED   [ 90%]
+当前用例名称： test_rcsext_int_03_errorlog
+['N0/ccEEtEey3Idie8zwxiw==']
+trace_id: f8a7c015-471a-4911-b586-b3ef6937ea7c
+dataHandle: 0a791f323bf648faa5f26d5490e551c9
+{"error_timestamp":"2022-01-29T03:45:22","upload_id":"d33b1ddc-4aa1-423a-9c16-0a70aab247cd","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSEXT-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"tile_replacements":null}
+还没找到对应的日志，等待1*3s
+dataHandle: 964e9af1df944f8597e9aacf2ab389aa
+{"error_timestamp":"2022-02-14T02:09:06","upload_id":"f8a7c015-471a-4911-b586-b3ef6937ea7c","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSEXT-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"tile_replacements":null}
+['oso:cloud_test_int:rcs:attrids:108_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_M0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_C0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_A1/ccEEtEey3Idie8zwxiw==']
+False
+PASSED     [ 95%]
+当前用例名称： test_rcsext_int_04_delete
+trace_id: 4a93e0ad-bbf0-4d28-bc1b-32c69dc0a277
+Volatiledata-NDS-2.5.4-China-Daimler-Int/oem-rcsext/557017790/total_num: 0
+[0]
+PASSED                [100%]
+当前用例名称： test_rcs_clear
+['oso:cloud_test:rcs:attrids:103_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:103_M0/ccEEtEey3Idie8zwxiw==']
+[]
+['oso:cloud_test_int:rcs:attrids:103_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_M0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:103_B0/ccEEtEey3Idie8zwxiw==']
+[]
+['oso:cloud_test:rcs:attrids:108_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_A1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_M0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test:rcs:attrids:108_A0/ccEEtEey3Idie8zwxiw==']
+[]
+['oso:cloud_test_int:rcs:attrids:108_B0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_M1/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_A0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_M0/ccEEtEey3Idie8zwxiw==', 'oso:cloud_test_int:rcs:attrids:108_A1/ccEEtEey3Idie8zwxiw==']
+[]
+['log.txt', 'rcs-01-int-删除.json', 'rcs-02-3个tile发布-557042475-557038792-557017790.json', 'rcs-03-557042475-更新新的link.json', 'rcs-04-no-end_time.json', 'rcs-04-删除557017790.json']
+文件名称为： rcs-01-int-删除.json
+文件名称为： rcs-02-3个tile发布-557042475-557038792-557017790.json
+文件名称为： rcs-03-557042475-更新新的link.json
+文件名称为： rcs-04-no-end_time.json
+文件名称为： rcs-04-删除557017790.json

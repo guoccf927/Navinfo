@@ -8,6 +8,7 @@ import pytest
 
 LOOP_NUM = 10
 TIME_SLEEP = 3
+DATA_CHECK_FILE_DIR = '../TestFiles/03 data check'
 
 
 class Base(TestBaseFunc):
@@ -121,7 +122,7 @@ class BaseChangeProviderId(TestBaseFunc):
 
 class TestDataCheck:
     """
-    取出rcsint|rcsext 正式线|测试线 字段校验
+    取出rcsint|rcsext|hcc|hci 正式线|测试线 字段校验
     """
 
     def test_rcsint_prod_01(self):
@@ -131,7 +132,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/01 rcs-字段校验/int'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/int'
         Base(CATALOG_RCSINT, TRACEID_LAYER_RCSINT, ERROR_LAYER_RCSINT, file_dir, CHECK_FIELD_RCSINT_ERRORLOG_LIST)
 
     def test_rcsext_prod_02(self):
@@ -141,7 +142,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/01 rcs-字段校验/ext'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/ext'
         Base(CATALOG_RCSEXT, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, CHECK_FIELD_RCSEXT_ERRORLOG_LIST)
 
     def test_hcc_102_prod_03(self):
@@ -151,7 +152,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 102
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
@@ -165,7 +166,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 116
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
@@ -179,7 +180,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 118
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
@@ -193,7 +194,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 101
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
@@ -207,7 +208,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 117
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
@@ -221,7 +222,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/01 rcs-字段校验/int'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/int'
         Base(CATALOG_RCSINT_TEST, TRACEID_LAYER_RCSINT, ERROR_LAYER_RCSINT, file_dir, CHECK_FIELD_RCSINT_ERRORLOG_LIST)
 
     def test_rcsext_int_06(self):
@@ -231,7 +232,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/01 rcs-字段校验/ext'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/ext'
         Base(CATALOG_RCSEXT_TEST, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, CHECK_FIELD_RCSEXT_ERRORLOG_LIST)
 
     def test_hcc_102_int_03(self):
@@ -241,7 +242,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 102
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
@@ -255,7 +256,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 116
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
@@ -269,7 +270,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 118
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
@@ -283,7 +284,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 101
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)
@@ -297,7 +298,7 @@ class TestDataCheck:
 
         # 打印当前方法名称
         print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
-        file_dir = 'E:/03 HDMS/98 测试文件/data check/04 hcc-字段校验'
+        file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 117
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)

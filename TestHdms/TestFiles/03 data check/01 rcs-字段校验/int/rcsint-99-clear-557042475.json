@@ -1,0 +1,9 @@
+{
+	"msg_id": "nYeldssxEemBrBheDxK4cA==",
+	"msg_type": "DELETE_TILES",
+	"volatile_provider_id": 103,
+	"tile_deletions": [
+		557042475,
+		557017790
+	]
+}

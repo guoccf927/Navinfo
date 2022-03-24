@@ -1,0 +1,6 @@
+{
+	"msg_id": "no volatile_location_changes",
+	"msg_type": "UPDATE_ATTRIBUTES",
+	"volatile_provider_id": 116,
+	"map_version": "nrn:navinfo:data:::HDMap-NDS-2.5.4-Germany-Daimler;29"
+}

@@ -1,0 +1,268 @@
+文件名称为： rcs-02-msg_type为null.json
+trace_id: 6c8f2626-2fe4-4303-8b36-0f59eb2d9343
+dataHandle: 398513938e9a44e9899874f780c91fad
+{'error_timestamp': '2021-12-20T08:03:28', 'upload_id': '6c8f2626-2fe4-4303-8b36-0f59eb2d9343', 'msg_id': None, 'msg_type': None, 'volatile_provider_id': None, 'map_version': None, 'inuse_map_version': None, 'basic_info_errors': [{'error_code': 'EC-RCSINT-DC-msgType', 'error_msg': 'The following fields(msg_type) could not be resolve successfully, please check the field value.'}], 'tile_replacements': None}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-03-msg_type为双引号.json
+trace_id: 5f275361-4671-4827-ae3b-2a43b902e97c
+dataHandle: 5eb72acf45a94c3cba7094ee38c50e68
+{'error_timestamp': '2021-12-20T08:03:38', 'upload_id': '5f275361-4671-4827-ae3b-2a43b902e97c', 'msg_id': None, 'msg_type': None, 'volatile_provider_id': None, 'map_version': None, 'inuse_map_version': None, 'basic_info_errors': [{'error_code': 'EC-RCSINT-DC-msgType', 'error_msg': 'The following fields(msg_type) could not be resolve successfully, please check the field value.'}], 'tile_replacements': None}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-04-msg_version为null.json
+trace_id: beff5f11-af61-45e1-802a-d7d122656b9b
+dataHandle: 8f92debf3012459e8af3d7cd3741e079
+{'error_timestamp': '2021-12-20T08:03:48', 'upload_id': 'beff5f11-af61-45e1-802a-d7d122656b9b', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': None, 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': [{'error_code': 'WC-RCSINT-DC-field', 'error_msg': 'The following fields are missing or empty:map_version'}], 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'U8/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10019068, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique'}]}, {'attr_id': 'U6ADbkEtEeyUJ9ie8zwxiw==', 'volatile_location_id': 10019067, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique'}]}]}, {'nds_packed_tile_id': '557038792', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'U7ADbkEtEeyUJ9ie8zwxiw==', 'volatile_location_id': 10016295, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-05-msg_version为双引号.json
+trace_id: 2c3272f8-754f-496c-9ade-ce03446a8b14
+dataHandle: 717a584bd31c46f89c0dc6fcd73d8c8c
+{'error_timestamp': '2021-12-20T08:03:58', 'upload_id': '2c3272f8-754f-496c-9ade-ce03446a8b14', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': [{'error_code': 'WC-RCSINT-DC-field', 'error_msg': 'The following fields are missing or empty:map_version'}], 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'U8/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10019068, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique'}]}, {'attr_id': 'U6ADbkEtEeyUJ9ie8zwxiw==', 'volatile_location_id': 10019067, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique'}]}]}, {'nds_packed_tile_id': '557038792', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'U7ADbkEtEeyUJ9ie8zwxiw==', 'volatile_location_id': 10016295, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-06-msg_type不是REPLACE_TILES不是DELETE_TILES.json
+trace_id: 8519800f-49ae-4a04-a4ac-9107f7d3e9c7
+dataHandle: e7bf2f44096341bab6eb568d904c2287
+{'error_timestamp': '2021-12-20T08:04:09', 'upload_id': '8519800f-49ae-4a04-a4ac-9107f7d3e9c7', 'msg_id': None, 'msg_type': None, 'volatile_provider_id': None, 'map_version': None, 'inuse_map_version': None, 'basic_info_errors': [{'error_code': 'EC-RCSINT-DC-msgType', 'error_msg': 'The following fields(msg_type) could not be resolve successfully, please check the field value.'}], 'tile_replacements': None}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-07-volatile_provider_id为null.json
+trace_id: e7305baf-baa3-4967-8992-060461a1470a
+dataHandle: 3bafb26d59bc4f2298c2c3eab5059c2c
+{'error_timestamp': '2021-12-20T08:04:19', 'upload_id': 'e7305baf-baa3-4967-8992-060461a1470a', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': None, 'map_version': '', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': [{'error_code': 'field', 'error_msg': 'The following fields are missing or empty:volatile_provider_id'}], 'tile_replacements': None}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-08-volatile_provider_id为双引号.json
+trace_id: fa328f9a-313a-46f1-940e-dd1de8c98e58
+dataHandle: 93622d28e119463ca07f75aca863d151
+{'error_timestamp': '2021-12-20T08:04:29', 'upload_id': 'fa328f9a-313a-46f1-940e-dd1de8c98e58', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': None, 'map_version': '', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': [{'error_code': 'field', 'error_msg': 'The following fields are missing or empty:volatile_provider_id'}], 'tile_replacements': None}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-09-volatile_provider_id有多个值.json  备注：103和103
+trace_id: e14ab5ac-5658-42e5-a38c-4996e3707bb0
+dataHandle: 
+{"error_timestamp":"2021-12-22T14:59:25","upload_id":"e14ab5ac-5658-42e5-a38c-4996e3707bb0","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSINT-DC-field","error_msg":"the following fields are duplicate: volatile_provider_id"}],"tile_replacements":null}
+&&&&&&&&&&&&&&&&&&&&&
+rcs-09-volatile_provider_id有多个值.json   备注：103和108
+trace_id: bafe097b-fc97-43e0-94cf-8ff63cd15ad0
+dataHandle: 
+{"error_timestamp":"2021-12-22T15:07:25","upload_id":"bafe097b-fc97-43e0-94cf-8ff63cd15ad0","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSINT-DC-field","error_msg":"the following fields are duplicate: volatile_provider_id"}],"tile_replacements":null}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-10-volatile_provider_id不在客户给定范围-888.json
+trace_id: a4212252-b683-4728-a68d-9204a7ea728e
+dataHandle: 2474f2f6356f4722b8e1336735f543b2
+{'error_timestamp': '2021-12-20T08:04:49', 'upload_id': 'a4212252-b683-4728-a68d-9204a7ea728e', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 888, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': [{'error_code': 'EC-OSO-DC-providerID', 'error_msg': 'Invalid volatile_provider_id (888).'}], 'tile_replacements': None}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-11-create_time为null.json
+trace_id: 7be6d4dd-68df-4e69-a723-6f484420f8fe
+dataHandle: 511ec48bdec34e13a460756d234ed90f
+{'error_timestamp': '2021-12-20T08:04:59', 'upload_id': '7be6d4dd-68df-4e69-a723-6f484420f8fe', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': [{'error_code': 'EC-RCSINT-DC-time', 'error_msg': 'Invalid create_time (null) due to the wrong/expired schema or value.'}], 'oem_data_additions': None}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-12-create_time为双引号.json
+trace_id: 6422cbbb-9fb1-4048-a4a9-b1bc01430f0f
+dataHandle: 15e1dafa85854ef2a839b147945742d3
+{'error_timestamp': '2021-12-20T08:05:09', 'upload_id': '6422cbbb-9fb1-4048-a4a9-b1bc01430f0f', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': [{'error_code': 'EC-RCSINT-DC-time', 'error_msg': 'Invalid create_time () due to the wrong/expired schema or value.'}], 'oem_data_additions': None}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-13-create_time不是UTC格式.json
+trace_id: 7481c30a-083b-4267-bfd4-2395aa680450
+dataHandle: c0e2dc944ac741a3a45b86d27b53ebd1
+{'error_timestamp': '2021-12-20T08:05:20', 'upload_id': '7481c30a-083b-4267-bfd4-2395aa680450', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': [{'error_code': 'EC-RCSINT-DC-time', 'error_msg': 'Invalid create_time (2021-11-24 09:50:20) due to the wrong/expired schema or value.'}], 'oem_data_additions': None}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-14-create_time晚于导入时间.json
+trace_id: 5d2a8649-53f5-4946-8b1a-e5cd03a70a01
+dataHandle: 4d5e87fe05a04d9797b56d3ae2633a14
+{'error_timestamp': '2021-12-20T08:05:30', 'upload_id': '5d2a8649-53f5-4946-8b1a-e5cd03a70a01', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': [{'error_code': 'EC-RCSINT-DC-time', 'error_msg': 'Invalid created_time (2022-11-01T09:50:20) due to it after the input time (2021-12-20T08:05:30.174).'}], 'oem_data_additions': None}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-15-nds_packed_tile_id为null.json
+trace_id: 251ad415-bbb7-4cc2-9326-0391d596cc67
+dataHandle: d2b0de91443642c1a201f78e7bc72683
+{'error_timestamp': '2021-12-20T08:05:40', 'upload_id': '251ad415-bbb7-4cc2-9326-0391d596cc67', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': None, 'tileId_timestamp_errors': [{'error_code': 'EC-RCSINT-DC-tileID', 'error_msg': 'Invalid nds_packed_tile_id(null).'}], 'oem_data_additions': None}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-16-nds_packed_tile_id为双引号.json
+trace_id: aeac445d-b0bc-4e8e-ae03-c729ea6e34e2
+dataHandle: b87e19fa2aaa4e3f994ad33be4c9152e
+{'error_timestamp': '2021-12-20T08:05:50', 'upload_id': 'aeac445d-b0bc-4e8e-ae03-c729ea6e34e2', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': None, 'tileId_timestamp_errors': [{'error_code': 'EC-RCSINT-DC-tileID', 'error_msg': 'Invalid nds_packed_tile_id(null).'}], 'oem_data_additions': None}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-17-nds_packed_tile_id不在范围内.json
+trace_id: cce8e3b1-4786-4205-81b6-3a3f22b5fd48
+dataHandle: 93883d3408f245b4bb739158c3f3ff57
+{'error_timestamp': '2021-12-20T08:06:00', 'upload_id': 'cce8e3b1-4786-4205-81b6-3a3f22b5fd48', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': None, 'tileId_timestamp_errors': [{'error_code': 'EC-RCSINT-DC-tileID', 'error_msg': 'Invalid nds_packed_tile_id(671088699).'}], 'oem_data_additions': None}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-18-payload为null.json
+trace_id: a9c9a725-7994-4129-8e04-1f4b25c604ad
+dataHandle: 573f2a4631e24c7ba67bebe1b51050c4
+{'error_timestamp': '2021-12-20T08:06:10', 'upload_id': 'a9c9a725-7994-4129-8e04-1f4b25c604ad', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'A1/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10019068, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-payload', 'error_msg': 'Invalid payload (null) due to the wrong value.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-19-payload为双引号.json
+trace_id: 802457e6-875f-4fa6-b3f2-1762e6376b2c
+dataHandle: f23555c88ec140f2b7699b720855f3fd
+{'error_timestamp': '2021-12-20T08:06:20', 'upload_id': '802457e6-875f-4fa6-b3f2-1762e6376b2c', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'A1/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10019068, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-payload', 'error_msg': 'Invalid payload () due to the wrong value.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-20-payload大于1024小于65535.json
+trace_id: a9a5f8bf-5807-49b8-8c39-434a5155e1b5
+dataHandle: de6afc55a4d94661a58d7ffc653ac207
+{'error_timestamp': '2021-12-20T08:06:31', 'upload_id': 'a9a5f8bf-5807-49b8-8c39-434a5155e1b5', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557017790', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'G1/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10007224, 'attribute_errors': [{'error_code': 'WC-RCSINT-DC-payload', 'error_msg': 'Warning: payload value (MTIz... decoded size > 1024 byte.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-21-payload大于65535.json
+trace_id: 7313f4a7-8e36-4792-a9fb-d3a1cdedee64
+dataHandle: bdfb6c2af38c4c969ed6932f137c378c
+{'error_timestamp': '2021-12-20T08:41:11', 'upload_id': '7313f4a7-8e36-4792-a9fb-d3a1cdedee64', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557017790', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'K2/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10007224, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-payload', 'error_msg': 'Invalid payload (...==) due to the decoded size > 65535 byte.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-22-attr_id为null.json
+trace_id: c8be7de7-3b25-4f34-9a1a-03415b0ab744
+dataHandle: 6ae8fad30a754d268c33fcf3c67ad228
+{'error_timestamp': '2021-12-20T08:06:51', 'upload_id': 'c8be7de7-3b25-4f34-9a1a-03415b0ab744', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': None, 'volatile_location_id': 10019068, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-field', 'error_msg': 'The following fields are missing or empty:attr_id'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-23-attr_id为双引号.json
+trace_id: a814c869-e02f-472f-b693-bbbc0d200c5e
+dataHandle: a0c6029488b2470eac8339cb3b576cc7
+{'error_timestamp': '2021-12-20T08:07:01', 'upload_id': 'a814c869-e02f-472f-b693-bbbc0d200c5e', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': '', 'volatile_location_id': 10019068, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-field', 'error_msg': 'The following fields are missing or empty:attr_id'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-24-attr_id为4个byte小于16byte.json
+trace_id: 26819673-c5cf-4b80-9e45-39e83386ab68
+dataHandle: 98e6349ec6254d07a90009ba14291bac
+{'error_timestamp': '2021-12-20T08:07:11', 'upload_id': '26819673-c5cf-4b80-9e45-39e83386ab68', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'MTIzNA==', 'volatile_location_id': 10019068, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'attr_id value not a size of 16 byte after decoded with base64'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-25-attr_id不能decode解码.json
+trace_id: d8157a30-a9fb-4c56-91c4-714f75e44ac5
+dataHandle: 0051e7bef111409fb45bf65fd45a813b
+{'error_timestamp': '2021-12-20T08:07:21', 'upload_id': 'd8157a30-a9fb-4c56-91c4-714f75e44ac5', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'B3ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10019068, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'Invalid attr_id (B3ccEEtEey3Idie8zwxiw==) due to failed decoded with base64.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-26-attr_id当前重复.json
+trace_id: 4d69889c-7c70-4f79-9d45-4d4f38e18e7b
+dataHandle: 02e40d335dd24d1589329f09749659bf
+{'error_timestamp': '2021-12-20T08:07:32', 'upload_id': '4d69889c-7c70-4f79-9d45-4d4f38e18e7b', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'B1/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10019067, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+rcs-27-attr_id不唯一.json
+trace_id: 4a3b8a13-a34c-49ba-baa8-dca77797f846
+dataHandle: 091e7f3fcfcf4ba4a15363f829787e94
+{'error_timestamp': '2021-12-20T08:37:56', 'upload_id': '4a3b8a13-a34c-49ba-baa8-dca77797f846', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': '123', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': '100001EtEey3Idie8zwxiw==', 'volatile_location_id': 10019068, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrID', 'error_msg': 'a combination of volatile_provider_id and attr_id (used as primary database key) which is not unique'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-28-locationid不存在.json
+trace_id: 39fefa72-6d52-4c53-ba8a-6ae461cbd471
+dataHandle: cee25f8aa6ab464bbba07146606c3fb3
+{'error_timestamp': '2021-12-21T08:02:22', 'upload_id': '39fefa72-6d52-4c53-ba8a-6ae461cbd471', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'A0/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 88888888, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-volloc', 'error_msg': 'Invalid volatile_location_id (88888888) due to it not exists in the HD NDS map(nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler) with version 96.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-30-locationid不在tile下.json
+trace_id: c724419d-d432-4cbf-8189-4082720c7b8c
+dataHandle: 7efc0f10aef54a3a98794a0e2243c542
+{'error_timestamp': '2021-12-21T08:02:32', 'upload_id': 'c724419d-d432-4cbf-8189-4082720c7b8c', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557042475', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'A0/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10041584, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-volloc', 'error_msg': 'Invalid volatile_location_id (10041584) due to it not intersects with the coverage of tileID 557042475.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-31-start_offset小于0.json
+trace_id: 173d6ca4-24ef-433b-a08f-37b4bf38edf9
+dataHandle: b3eccebc55474fb08cc9ffa205fcbe1d
+{'error_timestamp': '2021-12-21T08:02:42', 'upload_id': '173d6ca4-24ef-433b-a08f-37b4bf38edf9', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557004651', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'A0/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10041584, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrLocation', 'error_msg': 'Invalid start_offset (-1) due to the wrong value.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-32-end_offset小于0.json
+trace_id: 9bfcb4a7-823d-467a-82c2-c402384fc2e9
+dataHandle: 7bf6704d2eb3432fbba84f796b38f8f5
+{'error_timestamp': '2021-12-21T08:02:52', 'upload_id': '9bfcb4a7-823d-467a-82c2-c402384fc2e9', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557004651', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'A0/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10041584, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrLocation', 'error_msg': 'Invalid end_offset (-1) due to the wrong value.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-33-attr_length小于0.json
+trace_id: 11086ee8-af42-42ee-8ab0-6646a8ec8928
+dataHandle: 43bfe94f1a44445f8cf403a3021dac22
+{'error_timestamp': '2021-12-21T08:03:02', 'upload_id': '11086ee8-af42-42ee-8ab0-6646a8ec8928', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557004651', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'A3/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10041584, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrLocation', 'error_msg': 'Invalid attr_length (-1) due to the wrong value.'}, {'error_code': 'EC-RCSINT-DC-attrLocation', 'error_msg': 'Invalid oem data attribute due to the calculated attr length(1) less than 10m and it not extend over the complete volatile location.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-34-attr_length误差大于5米.json
+trace_id: 60f0053d-4d1b-49fd-94ca-c66ab11dfeb7
+dataHandle: c57e6d5460354e0db1478fa129da767c
+{'error_timestamp': '2021-12-21T08:03:12', 'upload_id': '60f0053d-4d1b-49fd-94ca-c66ab11dfeb7', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557004651', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'A4/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10041584, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrLocation', 'error_msg': 'Invalid attr_length (1620)  due to the difference between it and the calculated attr length(1632) greater than 5m.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-35-attr_length小于10米.json
+trace_id: a658ef72-33e8-42e9-83bb-8ba10cca6ee2
+dataHandle: aad89c69fb934f49b295d76080d7e325
+{'error_timestamp': '2021-12-21T08:03:22', 'upload_id': 'a658ef72-33e8-42e9-83bb-8ba10cca6ee2', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557004651', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'A4/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10041584, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-attrLocation', 'error_msg': 'Invalid oem data attribute due to the calculated attr length(6) less than 10m and it not extend over the complete volatile location.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-36-删除的tile_id存在但未发布.json
+trace_id: 1f37a9da-d6bc-40dc-88c0-379698893bf9
+dataHandle: aad89c69fb934f49b295d76080d7e325
+{"error_timestamp":"2021-12-24T07:15:41","upload_id":"1f37a9da-d6bc-40dc-88c0-379698893bf9","msg_id":"nYeldssxEemBrBheDxK4cA==","msg_type":"DELETE_TILES","volatile_provider_id":103,"basic_info_errors":null,"tile_deletions_errors":[{"error_code":"EC-RCSINT-DC-tileDel","error_msg":"Invalid tile_deletions due to tileID(557038792) not exist in layer oem-rcsint of catalog Volatiledata-NDS-2.5.4-China-Daimler."},{"error_code":"EC-RCSINT-DC-tileDel","error_msg":"Invalid tile_deletions due to tileID(557017819) not exist in layer oem-rcsint of catalog Volatiledata-NDS-2.5.4-China-Daimler."}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-36-删除的tile_id存在但未发布.json
+trace_id: 3fabc0fc-dd54-42ac-9f19-00ecc42610b9
+dataHandle: aad89c69fb934f49b295d76080d7e325
+{"error_timestamp":"2021-12-24T07:18:20","upload_id":"3fabc0fc-dd54-42ac-9f19-00ecc42610b9","msg_id":"nYeldssxEemBrBheDxK4cA==","msg_type":"DELETE_TILES","volatile_provider_id":103,"basic_info_errors":null,"tile_deletions_errors":[{"error_code":"EC-RCSINT-DC-tileDel","error_msg":"Invalid tile_deletions due to tileID(888888888) not exist in layer oem-rcsint of catalog Volatiledata-NDS-2.5.4-China-Daimler."}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-38-存在多余的start_time.json
+trace_id: 89bc972f-1052-4c0b-aa77-c90bcd17d4fb
+dataHandle: 0789f98ee1e74260bf3d7ae9da206116
+{'error_timestamp': '2021-12-22T02:25:37', 'upload_id': '89bc972f-1052-4c0b-aa77-c90bcd17d4fb', 'msg_id': None, 'msg_type': None, 'volatile_provider_id': None, 'map_version': None, 'inuse_map_version': None, 'basic_info_errors': [{'error_code': '', 'error_msg': 'the following fields are redundant: {}'}], 'tile_replacements': None}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-39-payload无法decode.json
+trace_id: fa6df3f0-0825-4404-bcad-95677bdf7e62
+dataHandle: 5938d9bc04ec430a9e87a615a3680f81
+{'error_timestamp': '2021-12-22T02:25:47', 'upload_id': 'fa6df3f0-0825-4404-bcad-95677bdf7e62', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557038792', 'tileId_timestamp_errors': None, 'oem_data_additions': [{'attr_id': 'B2/ccEEtEey3Idie8zwxiw==', 'volatile_location_id': 10016295, 'attribute_errors': [{'error_code': 'EC-RCSINT-DC-payload', 'error_msg': 'Invalid payload (MM?) due to failed decoded with base64.'}]}]}]}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-40-payload字段重复.json
+{
+	"msg_id": "nYeldssxEemBrBheDxK4cA==",
+	"msg_type": "REPLACE_TILES",
+	"volatile_provider_id": 103,
+	"map_version": "nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0",
+	"tile_replacements": [
+		{
+			"nds_packed_tile_id": 557038792,
+			"created_time": "2021-11-24T02:01:30",
+			"end_time": "2022-01-25T08:40:20",
+			"oem_data_additions": [
+				{
+					"volatile_location_id": 10016295,
+					"start_offset": 100,
+					"end_offset": 0,
+					"attr_length": 28,
+					"attr_id": "B2/ccEEtEey3Idie8zwxiw==",
+					"payload": "MMM",
+					"payload": "MMMM"
+				}
+			]
+		}
+	]
+}
+trace_id: d6d21ec6-741e-4208-9734-7bb7d175ea3e
+第一次执行：pycharm执行没有出现错误日志，且attr_id可在redis中可见
+第二次执行：postman执行出现错误日志
+trace_id: 3d6c184f-8550-47da-b049-5e3ea2ac28e8
+dataHandle: e7f18ba76448403b98c58790ba56cce0
+{"error_timestamp":"2021-12-22T02:31:00","upload_id":"3d6c184f-8550-47da-b049-5e3ea2ac28e8","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSINT-DC-field","error_msg":"the following fields are duplicate: payload"}],"tile_replacements":null}
+备注：kibana中不可见任何关于此traceid的内容，oso-rcs-service可见
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcs-41-attr_id字段重复.json
+{
+	"msg_id": "nYeldssxEemBrBheDxK4cA==",
+	"msg_type": "REPLACE_TILES",
+	"volatile_provider_id": 103,
+	"map_version": "nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0",
+	"tile_replacements": [
+		{
+			"nds_packed_tile_id": 557038792,
+			"created_time": "2021-11-24T02:01:30",
+			"end_time": "2022-02-05T08:40:20",
+			"oem_data_additions": [
+				{
+					"volatile_location_id": 10016295,
+					"start_offset": 100,
+					"end_offset": 0,
+					"attr_length": 28,
+					"attr_id": "ERROR01tEey3Idie8zwxiw==",
+					"attr_id": "ERROR02tEey3Idie8zwxiw==",
+					"payload": "MMM"
+				}
+			]
+		}
+	]
+}
+第一次pycharm执行：没有出现错误日志，且attr_id可在redis中可见第二个attr_id
+trace_id: c3ec1dbd-1eba-4f0f-b2f1-d5caeba3d804
+第二次postman执行：出现错误日志
+{"error_timestamp":"2021-12-22T03:25:14","upload_id":"ba0891f4-13bd-4e2c-8742-12d19bb50a31","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSINT-DC-field","error_msg":"the following fields are duplicate: attr_id"}],"tile_replacements":null}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcsint-42-tile_replacements为空.json
+trace_id: ceb52a9c-13ae-47b3-a530-f8639e8ba89e
+dataHandle: 3d928af497e14e93a41fb0cf0ceafd9c
+{'error_timestamp': '2021-12-23T03:10:32', 'upload_id': 'ceb52a9c-13ae-47b3-a530-f8639e8ba89e', 'msg_id': 'nYeldssxEemBrBheDxK4cA==', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': [{'error_code': 'EC-RCSINT-DC-field', 'error_msg': 'The following fields are missing or empty:tile_replacements'}], 'tile_replacements': None}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcsint-43-tile_deletions为空-标记错误.json
+trace_id: 7299c93d-3596-4ec3-8c76-2ac1ff0dabf9
+dataHandle: 99ad045491de4dceb37ef85897bbe03b
+{'error_timestamp': '2021-12-23T03:10:42', 'upload_id': '7299c93d-3596-4ec3-8c76-2ac1ff0dabf9', 'msg_id': None, 'msg_type': None, 'volatile_provider_id': None, 'map_version': None, 'inuse_map_version': None, 'basic_info_errors': [{'error_code': '', 'error_msg': 'the following fields are redundant: {}'}], 'tile_replacements': None}
+**********************************************************这是一个分界线*********************************************************
+文件名称为： rcsint-44-oem_data_additions为空.json
+trace_id: eeef301a-8394-4149-b1a6-65ce191dfd6b
+dataHandle: 98b92db12cdb46b5b285dcb67670a3d4
+{'error_timestamp': '2021-12-23T03:15:00', 'upload_id': 'eeef301a-8394-4149-b1a6-65ce191dfd6b', 'msg_id': 'oem_data_additions 为空', 'msg_type': 'REPLACE_TILES', 'volatile_provider_id': 103, 'map_version': 'nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0', 'inuse_map_version': 'nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;75', 'basic_info_errors': None, 'tile_replacements': [{'nds_packed_tile_id': '557358066', 'tileId_timestamp_errors': [{'error_code': 'EC-RCSINT-DC-noData', 'error_msg': 'Invalid input file due to no change defined on the OEM data layer.'}], 'oem_data_additions': None}]}
+**********************************************************这是一个分界线*********************************************************

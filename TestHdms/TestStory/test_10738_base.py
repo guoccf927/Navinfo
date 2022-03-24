@@ -24,6 +24,7 @@ class Base(TestBaseFunc):
         for j in range(len(hdms_tile)):
             for i in range(len(interface_tile)):
                 if hdms_tile[j][0] == interface_tile[i][0]:
+                    # 将所有校验结果打印出来，不报错
                     if interface_tile[i][1] != hdms_tile[j][1]:
                         print(f'校验的第{j + 1}个tile:{hdms_tile[j][0]} checksum不一致')
                         print('*********************************************这是一条分界线*********************************************')
@@ -34,6 +35,7 @@ class Base(TestBaseFunc):
                         print('*********************************************这是一条分界线*********************************************')
                     else:
                         print(f'校验的第{j + 1}个tile:{hdms_tile[j][0]} crc一致')
+                    # 直接校验，出现错误则跳出
                     # assert interface_tile[i][2] == hdms_tile[j][2], f'校验的第{j + 1}个tile:{hdms_tile[j][0]} crc不一致'
                     # assert interface_tile[i][1] == hdms_tile[j][1], f'校验的第{j + 1}个tile:{hdms_tile[j][0]} checksum不一致'
                     continue

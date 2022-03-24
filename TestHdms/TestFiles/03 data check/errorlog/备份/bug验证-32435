@@ -1,0 +1,35 @@
+正常的hcc删除：不校验end_time
+
+**********************************************************这是一个分界线*********************************************************
+文件名称：hcc-05-no-volatile_location_changes.json
+"TraceID": "ab917d33-dd62-4cfb-b063-94fb43ac5d16"
+{"error_timestamp":"2021-12-28T03:12:14","upload_id":"ab917d33-dd62-4cfb-b063-94fb43ac5d16","msg_id":"no volatile_location_changes","msg_type":"UPDATE_ATTRIBUTES","volatile_provider_id":116,"map_version":"nrn:navinfo:data:::HDMap-NDS-2.5.4-Germany-Daimler;29","inuse_map_version":"nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;76","basic_info_errors":[{"error_code":"EC-HCC-DC-field","error_msg":"The following fields are missing or empty:volatileLocationChanges"}],"volatile_location_changes":null}
+
+**********************************************************这是一个分界线*********************************************************
+文件名称：hcc-07-no-oem_data_additions.json
+"TraceID": "43088e9b-90c6-4b6d-9d26-519f542a8217"
+{"error_timestamp":"2021-12-28T03:14:03","upload_id":"43088e9b-90c6-4b6d-9d26-519f542a8217","msg_id":"no oem_data_additions","msg_type":"UPDATE_ATTRIBUTES","volatile_provider_id":116,"map_version":"nrn:navinfo:data:::HDMap-NDS-2.5.4-Germany-Daimler;29","inuse_map_version":"nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;76","basic_info_errors":null,"volatile_location_changes":[{"volatile_location_id":"10016295","volatile_location_id_errors":null,"oem_data_additions":null,"oem_data_deletions":[{"error_code":"EC-HCC-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]}]}
+
+**********************************************************这是一个分界线*********************************************************
+文件名称：hcc-12-no-end_time-标记错误.json
+"TraceID": "63efef27-b3d3-4f88-bcb1-c7752f27a329"
+{"error_timestamp":"2021-12-28T03:16:10","upload_id":"63efef27-b3d3-4f88-bcb1-c7752f27a329","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-HCC-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"volatile_location_changes":null}
+
+**********************************************************这是一个分界线*********************************************************
+正常的rcs删除：不校验end_time
+
+**********************************************************这是一个分界线*********************************************************
+文件名称：rcsext-05-no-tile_deletions.json
+"TraceID": "b530e7a1-da40-430d-8c72-881cdd14e954"
+rcs有错误信息需要发布到ID:{"error_timestamp":"2021-12-28T03:20:38","upload_id":"b530e7a1-da40-430d-8c72-881cdd14e954","msg_id":"删除类型 tile_deletions为空","msg_type":"DELETE_TILES","volatile_provider_id":108,"basic_info_errors":[],"tile_deletions_errors":[{"error_code":"EC-RCSEXT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]}
+rcs有错误信息需要发布到ID:{"error_timestamp":"2021-12-28T03:20:38","upload_id":"b530e7a1-da40-430d-8c72-881cdd14e954","msg_id":"删除类型 tile_deletions为空","msg_type":"DELETE_TILES","volatile_provider_id":108,"basic_info_errors":null,"tile_deletions_errors":[{"error_code":"EC-RCSEXT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]}
+
+**********************************************************这是一个分界线*********************************************************
+文件名称：rcsext-05-no-tile_replacements.json
+{"error_timestamp":"2021-12-28T03:32:16","upload_id":"5ace5d7d-b615-412a-8c08-9813e0ba4030","msg_id":"nYeldssxEemBrBheDxK4cA==","msg_type":"REPLACE_TILES","volatile_provider_id":108,"map_version":"nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0","inuse_map_version":"nrn:navinfo:data:::HDMap-NDS-2.5.4-China-Daimler;76","basic_info_errors":[{"error_code":"EC-RCSEXT-DC-field","error_msg":"The following fields are missing or empty:tile_replacements"}],"tile_replacements":null}
+
+**********************************************************这是一个分界线*********************************************************
+文件名称：rcsext-08-no-end_time.json
+{"error_timestamp":"2021-12-28T03:33:16","upload_id":"8b909c75-8f70-4ccd-9c49-a65073710e62","msg_id":null,"msg_type":null,"volatile_provider_id":null,"map_version":null,"inuse_map_version":null,"basic_info_errors":[{"error_code":"EC-RCSEXT-DC-field","error_msg":"The following fields are missing or empty:end_time"}],"tile_replacements":null}
+
+

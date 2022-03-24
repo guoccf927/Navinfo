@@ -5,7 +5,7 @@
 from TestHdms.Base.basefunc_test import *
 
 NO_END_TIME_ERROR_LOG = """"oem_data_additions":[{"attr_id":"C1/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-time","error_msg":"Invalid end time due to the field missing , empty or its invalid value."}]},{"attr_id":"A8/ccEEtEey3Idie8zwxiw==","attribute_errors":[{"error_code":"EC-HCC-DC-time","error_msg":"Invalid end time due to the field missing , empty or its invalid value."}]}]"""
-FILE_LIST_DIR = r'E:/03 HDMS/98 测试文件/04 hcc-prod-int'
+FILE_LIST_DIR = '../TestFiles/02 hcc-prod-int'
 LOOP_NUM = 10
 TIME_SLEEP = 3
 

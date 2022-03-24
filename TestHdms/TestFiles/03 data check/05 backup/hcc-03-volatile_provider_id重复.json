@@ -1,0 +1,34 @@
+{
+	"msg_id": "1YeldssxEemBrBheDxK4cA==",
+	"msg_type": "UPDATE_ATTRIBUTES",
+	"volatile_provider_id": 116,
+	"volatile_provider_id": 102,
+	"map_version": "nrn:navinfo:data:::HDMap-NDS-2.5.4-Germany-Daimler;0",
+	"volatile_location_changes": [
+		{
+			"volatile_location_id": 10016295,
+			"oem_data_additions": [
+				{
+					"start_offset": 0,
+					"end_offset": 100,
+					"attr_length": 28,
+					"start_time": "2021-08-21T08:05:26",
+					"end_time": "2130-01-02T01:01:27",
+					"created_time": "2021-11-25T03:45:06",
+					"attr_id": "E0/ccEEtEey3Idie8zwxiw==",
+					"payload": "EEE"
+				},
+				{
+					"start_offset": 0,
+					"end_offset": 0,
+					"attr_length": 128,
+					"start_time": "2019-08-21T08:05:26",
+					"end_time": "2130-01-01T01:01:00",
+					"attr_id": "E1/ccEEtEey3Idie8zwxiw==",
+					"created_time": "2021-11-25T03:45:06",
+					"payload": "EEE"
+				}
+			]
+		}
+	]
+}
