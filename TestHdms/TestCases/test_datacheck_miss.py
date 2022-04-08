@@ -48,7 +48,7 @@ class Base(TestBaseFunc):
                             break
                         time.sleep(TIME_SLEEP)
                         print(f"循环{j + 1}*{str(TIME_SLEEP)}s,还没找到对应的日志")
-                    assert self.error_log_list[i - 1] in res_err, f'{file_list[i]} 日志错误'
+                    # assert self.error_log_list[i - 1] in res_err, f'{file_list[i]} 日志错误'
 
 
 class TestDataCheckMiss:

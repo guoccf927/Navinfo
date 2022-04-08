@@ -168,7 +168,6 @@ CHECK_FIELD_RCSINT_ERRORLOG_LIST = [
     """"tileId_timestamp_errors":[{"error_code":"EC-RCSINT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
     """"tileId_timestamp_errors":[{"error_code":"EC-RCSINT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
     """"tileId_timestamp_errors":[{"error_code":"EC-RCSINT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
-    """"tileId_timestamp_errors":[{"error_code":"EC-RCSINT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
     """"tile_deletions_errors":[{"error_code":"EC-RCSINT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]"""
 ]
 
@@ -216,7 +215,6 @@ CHECK_FIELD_RCSEXT_ERRORLOG_LIST = [
     """"tileId_timestamp_errors":[{"error_code":"EC-RCSEXT-DC-time","error_msg":"Invalid end_time () due to the wrong/expired schema or value."}]""",
     """"tileId_timestamp_errors":[{"error_code":"EC-RCSEXT-DC-time","error_msg":"Invalid end_time (2021-12-20T01:13:00) due to the wrong/expired schema or value."}]""",
     """plus 15min.""",
-    """"tileId_timestamp_errors":[{"error_code":"EC-RCSEXT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
     """"tileId_timestamp_errors":[{"error_code":"EC-RCSEXT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
     """"tileId_timestamp_errors":[{"error_code":"EC-RCSEXT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",
     """"tileId_timestamp_errors":[{"error_code":"EC-RCSEXT-DC-noData","error_msg":"Invalid input file due to no change defined on the OEM data layer."}]""",

@@ -511,14 +511,14 @@ class TestBaseFunc:
         # 可获得返回码、输出、错误、进程号；
         return res.returncode, sout, serr, res.pid
 
-    def output_log_begin(self):
+    def output_log_begin(self, case_name):
         """
         执行结果输出
         :return:outputfile
         """
         # 为避免log文件被覆盖，增加时间戳来分开记录
         log_day = time.strftime("%Y-%m-%d", time.localtime())
-        path = f'D:\\PycharmProjects\\result\\log\\{log_day}\\'
+        path = f'D:\\Navinfo\\result\\log\\{log_day}\\'
         folder = os.path.exists(path)
 
         # 判断是否存在文件夹如果不存在则创建为文件夹
@@ -526,8 +526,8 @@ class TestBaseFunc:
             # makedirs 创建文件时如果路径不存在会创建这个路径
             os.makedirs(path)
 
-        log_time = time.time()
-        full_path = f'{path}log_{log_time}.txt'
+        log_time = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        full_path = f'{path}log_{case_name}_{log_time}.txt'
         outputfile = open(full_path, 'w')
         sys.stdout = outputfile
         return outputfile

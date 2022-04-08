@@ -2,6 +2,7 @@
 # @Time        :2022/3/21 14:56
 # @Author      :guocongcong7572@navinfo.com
 # @Description :datacheck 字段校验,其中"msg_id"字段缺失不报错;;;未覆盖场景——文件不是json格式、字段重复(使用postman正常报错);;;
+# @backup      :由于日志较多，使用当前console输出的话会导致之前的日志丢失，使用文件写入的方式；base类中有日志写入操作，之后再进行文件写入会出现问题
 
 from TestHdms.Base.basefunc_test import *
 import pytest
@@ -12,7 +13,7 @@ DATA_CHECK_FILE_DIR = '../TestFiles/03 data check'
 
 
 class Base(TestBaseFunc):
-    def __init__(self, catalog_id, layer_id, error_layer_id, file_dir, error_log_list):
+    def __init__(self, case_name, catalog_id, layer_id, error_layer_id, file_dir, error_log_list):
         """
         :param catalog_id: ingest接口中catalog
         :param layer_id: ingest接口中layer
@@ -25,6 +26,9 @@ class Base(TestBaseFunc):
         self.error_layer_id = error_layer_id
         self.file_dir = file_dir
         self.error_log_list = error_log_list
+        self.case_name = case_name
+        # 日志输出到本地
+        logfile = self.output_log_begin(self.case_name)
 
         file_list = os.listdir(self.file_dir)
         print(file_list)
@@ -56,7 +60,8 @@ class Base(TestBaseFunc):
                         break
                     time.sleep(TIME_SLEEP)
                     print(f"循环{j + 1}*{str(TIME_SLEEP)}s,还没找到对应的日志")
-                assert self.error_log_list[i - 1] in res_err, f'{file_list[i]} 日志错误'
+                # assert self.error_log_list[i - 1] in res_err, f'{file_list[i]} 日志错误'
+        self.output_log_end(logfile)
 
 
 class BaseClearHCC(TestBaseFunc):
@@ -125,15 +130,17 @@ class TestDataCheck:
     取出rcsint|rcsext|hcc|hci 正式线|测试线 字段校验
     """
 
+    # @pytest.mark.skip()
     def test_rcsint_prod_01(self):
         """
         rcsint 正式线
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/int'
-        Base(CATALOG_RCSINT, TRACEID_LAYER_RCSINT, ERROR_LAYER_RCSINT, file_dir, CHECK_FIELD_RCSINT_ERRORLOG_LIST)
+        Base(case_name, CATALOG_RCSINT, TRACEID_LAYER_RCSINT, ERROR_LAYER_RCSINT, file_dir, CHECK_FIELD_RCSINT_ERRORLOG_LIST)
 
     def test_rcsext_prod_02(self):
         """
@@ -141,9 +148,10 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/ext'
-        Base(CATALOG_RCSEXT, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, CHECK_FIELD_RCSEXT_ERRORLOG_LIST)
+        Base(case_name, CATALOG_RCSEXT, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, CHECK_FIELD_RCSEXT_ERRORLOG_LIST)
 
     def test_hcc_102_prod_03(self):
         """
@@ -151,13 +159,13 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 102
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
-        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
+        Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
     def test_hcc_116_prod_03(self):
         """
@@ -165,13 +173,13 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 116
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
-        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
+        Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
     def test_hcc_118_prod_03(self):
         """
@@ -179,13 +187,13 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 118
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
-        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
+        Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
     def test_hci_101_prod_04(self):
         """
@@ -193,13 +201,13 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 101
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
-        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
+        Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
 
     def test_hci_117_prod_04(self):
         """
@@ -207,13 +215,13 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 117
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
-        Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
+        Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
 
     def test_rcsint_int_05(self):
         """
@@ -221,9 +229,10 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/int'
-        Base(CATALOG_RCSINT_TEST, TRACEID_LAYER_RCSINT, ERROR_LAYER_RCSINT, file_dir, CHECK_FIELD_RCSINT_ERRORLOG_LIST)
+        Base(case_name, CATALOG_RCSINT_TEST, TRACEID_LAYER_RCSINT, ERROR_LAYER_RCSINT, file_dir, CHECK_FIELD_RCSINT_ERRORLOG_LIST)
 
     def test_rcsext_int_06(self):
         """
@@ -231,9 +240,10 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/ext'
-        Base(CATALOG_RCSEXT_TEST, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, CHECK_FIELD_RCSEXT_ERRORLOG_LIST)
+        Base(case_name, CATALOG_RCSEXT_TEST, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, CHECK_FIELD_RCSEXT_ERRORLOG_LIST)
 
     def test_hcc_102_int_03(self):
         """
@@ -241,13 +251,13 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 102
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
-        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
+        Base(case_name, CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
     def test_hcc_116_int_03(self):
         """
@@ -255,13 +265,13 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 116
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
-        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
+        Base(case_name, CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
     def test_hcc_118_int_03(self):
         """
@@ -269,13 +279,13 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 118
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
-        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
+        Base(case_name, CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
     def test_hci_101_int_04(self):
         """
@@ -283,13 +293,13 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 101
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)
-        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)
+        Base(case_name, CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
 
     def test_hci_117_int_04(self):
         """
@@ -297,10 +307,10 @@ class TestDataCheck:
         """
 
         # 打印当前方法名称
-        print('\r\n当前用例名称：', sys._getframe().f_code.co_name)
+        case_name = sys._getframe().f_code.co_name
+        print('\r\n当前用例名称：', case_name)
         file_dir = f'{DATA_CHECK_FILE_DIR}/04 hcc-字段校验'
         volatile_provider_id = 117
         BaseChangeProviderId(file_dir, volatile_provider_id)
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)
-        Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
-        BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)
+        Base(case_name, CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
