@@ -2,6 +2,7 @@
 # @Time        :2022/3/21 16:48
 # @Author      :guocongcong7572@navinfo.com
 # @Description :字段缺失校验,其中"msg_id"字段缺失不报错
+import re
 
 from TestHdms.Base.basefunc_test import *
 
@@ -44,6 +45,22 @@ class Base(TestBaseFunc):
                     for j in range(LOOP_NUM):
                         res_err = self.get_errorlog(self.catalog_id, self.error_layer_id)
                         if trace_id in res_err:
+                            attr_id = re.findall(r'"attr_id":(.*?),', res_err)
+                            volatile_location_id = re.findall(r'"volatile_location_id":(.*?),', res_err)
+                            if len(attr_id) == 0:
+                                print(f'10839字段校验：{file_list[i]} attr_id 不存在')
+                            if len(attr_id) != 0:
+                                if attr_id[0] == 'null':
+                                    print(f'10839字段校验：{file_list[i]} attr_id 为null')
+                                if attr_id[0] == '""':
+                                    print(f'10839字段校验：{file_list[i]} attr_id 为""')
+                            if len(volatile_location_id) == 0:
+                                print(f'10839字段校验：{file_list[i]} volatile_location_id 不存在')
+                            if len(volatile_location_id) != 0:
+                                if volatile_location_id[0] == 'null':
+                                    print(f'10839字段校验：{file_list[i]} volatile_location_id 为null')
+                                if volatile_location_id[0] == '""':
+                                    print(f'10839字段校验：{file_list[i]} volatile_location_id 为""')
                             print('\n')
                             break
                         time.sleep(TIME_SLEEP)

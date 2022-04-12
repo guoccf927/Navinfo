@@ -3,6 +3,7 @@
 # @Author      :guocongcong7572@navinfo.com
 # @Description :datacheck 字段校验,其中"msg_id"字段缺失不报错;;;未覆盖场景——文件不是json格式、字段重复(使用postman正常报错);;;
 # @backup      :由于日志较多，使用当前console输出的话会导致之前的日志丢失，使用文件写入的方式；base类中有日志写入操作，之后再进行文件写入会出现问题
+import re
 
 from TestHdms.Base.basefunc_test import *
 import pytest
@@ -56,6 +57,22 @@ class Base(TestBaseFunc):
                 for j in range(LOOP_NUM):
                     res_err = self.get_errorlog(self.catalog_id, self.error_layer_id)
                     if trace_id in res_err:
+                        attr_id = re.findall(r'"attr_id":(.*?),', res_err)
+                        volatile_location_id = re.findall(r'"volatile_location_id":(.*?),', res_err)
+                        if len(attr_id) == 0:
+                            print(f'10839字段校验：{file_list[i]} attr_id 不存在')
+                        if len(attr_id) != 0:
+                            if attr_id[0] == 'null':
+                                print(f'10839字段校验：{file_list[i]} attr_id 为null')
+                            if attr_id[0] == '""':
+                                print(f'10839字段校验：{file_list[i]} attr_id 为""')
+                        if len(volatile_location_id) == 0:
+                            print(f'10839字段校验：{file_list[i]} volatile_location_id 不存在')
+                        if len(volatile_location_id) != 0:
+                            if volatile_location_id[0] == 'null':
+                                print(f'10839字段校验：{file_list[i]} volatile_location_id 为null')
+                            if volatile_location_id[0] == '""':
+                                print(f'10839字段校验：{file_list[i]} volatile_location_id 为""')
                         print('\n')
                         break
                     time.sleep(TIME_SLEEP)
@@ -167,7 +184,7 @@ class TestDataCheck:
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
         Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
-    def test_hcc_116_prod_03(self):
+    def test_hcc_116_prod_04(self):
         """
         hcc 116 正式线
         """
@@ -181,7 +198,7 @@ class TestDataCheck:
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
         Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
-    def test_hcc_118_prod_03(self):
+    def test_hcc_118_prod_05(self):
         """
         hcc 118 正式线
         """
@@ -195,7 +212,7 @@ class TestDataCheck:
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, file_dir)
         Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
-    def test_hci_101_prod_04(self):
+    def test_hci_101_prod_06(self):
         """
         hci 101 正式线
         """
@@ -209,7 +226,7 @@ class TestDataCheck:
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
         Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
 
-    def test_hci_117_prod_04(self):
+    def test_hci_117_prod_07(self):
         """
         hci 117 正式线
         """
@@ -223,7 +240,7 @@ class TestDataCheck:
         BaseClearHCC(CATALOG_HCC_HCI, TRACEID_LAYER_HCI, file_dir)
         Base(case_name, CATALOG_HCC_HCI, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
 
-    def test_rcsint_int_05(self):
+    def test_rcsint_int_08(self):
         """
         rcsint 测试线
         """
@@ -234,7 +251,7 @@ class TestDataCheck:
         file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/int'
         Base(case_name, CATALOG_RCSINT_TEST, TRACEID_LAYER_RCSINT, ERROR_LAYER_RCSINT, file_dir, CHECK_FIELD_RCSINT_ERRORLOG_LIST)
 
-    def test_rcsext_int_06(self):
+    def test_rcsext_int_09(self):
         """
         rcsext 测试线
         """
@@ -245,7 +262,7 @@ class TestDataCheck:
         file_dir = f'{DATA_CHECK_FILE_DIR}/01 rcs-字段校验/ext'
         Base(case_name, CATALOG_RCSEXT_TEST, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, CHECK_FIELD_RCSEXT_ERRORLOG_LIST)
 
-    def test_hcc_102_int_03(self):
+    def test_hcc_102_int_10(self):
         """
         hcc 102 测试线
         """
@@ -259,7 +276,7 @@ class TestDataCheck:
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
         Base(case_name, CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
-    def test_hcc_116_int_03(self):
+    def test_hcc_116_int_11(self):
         """
         hcc 116 测试线
         """
@@ -273,7 +290,7 @@ class TestDataCheck:
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
         Base(case_name, CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
-    def test_hcc_118_int_03(self):
+    def test_hcc_118_int_12(self):
         """
         hcc 118 测试线
         """
@@ -287,7 +304,7 @@ class TestDataCheck:
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, file_dir)
         Base(case_name, CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, CHECK_FIELD_HCC_ERRORLOG_LIST)
 
-    def test_hci_101_int_04(self):
+    def test_hci_101_int_13(self):
         """
         hci 101 测试线
         """
@@ -301,7 +318,7 @@ class TestDataCheck:
         BaseClearHCC(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, file_dir)
         Base(case_name, CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCI, ERROR_LAYER_HCI, file_dir, CHECK_FIELD_HCI_ERRORLOG_LIST)
 
-    def test_hci_117_int_04(self):
+    def test_hci_117_int_14(self):
         """
         hci 117 测试线
         """

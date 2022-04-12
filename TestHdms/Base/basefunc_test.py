@@ -527,7 +527,7 @@ class TestBaseFunc:
             os.makedirs(path)
 
         log_time = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-        full_path = f'{path}log_{case_name}_{log_time}.txt'
+        full_path = f'{path}{log_time}-{case_name}.txt'
         outputfile = open(full_path, 'w')
         sys.stdout = outputfile
         return outputfile
