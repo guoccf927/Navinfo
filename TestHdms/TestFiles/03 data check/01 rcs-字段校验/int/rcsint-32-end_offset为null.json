@@ -1,7 +1,7 @@
 {
 	"msg_id": "nYeldssxEemBrBheDxK4cA==",
 	"msg_type": "REPLACE_TILES",
-	"volatile_provider_id": 108,
+	"volatile_provider_id": 103,
 	"map_version": "nrn:navinfo:data:::Volatiledata-NDS-2.5.4-China-Daimler-test;0",
 	"tile_replacements": [
 		{
@@ -12,9 +12,9 @@
 				{
 					"volatile_location_id": 10041584,
 					"start_offset": 0,
-					"end_offset": 1631,
-					"attr_length": -1,
-					"attr_id": "M2/ccEEtEey3Idie8zwxiw==",
+					"end_offset": null,
+					"attr_length": 1632,
+					"attr_id": "A0/ccEEtEey3Idie8zwxiw==",
 					"payload": "MMM"
 				}
 			]

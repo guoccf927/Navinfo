@@ -1,3 +1,14 @@
+----20220411----
+其中，map_version为null或""且没有其他错误时，不输出attr_id和location_id
+hcc/hci：
+1. 不符合json 规范，msg_type错误，重复字段 按非法文件处理，不输出attr id等信息
+2. 字段丢失，变多，文件大小>4M，msg_type,volatile_provider_id，map_version，volatile_location_id错误需要输出对应所影响的volatile location id及attr id ，含oemdataaddition 及oemdatadeletion下的。
+3.oem_data_deletions错误 需要输出对应所影响的attr id
+rcsint/ext:
+1. 不符合json 规范，msg_type错误，重复字段 按非法文件处理，不输出attr id等信息
+2. 字段丢失，变多，文件大小>4M，msg_type,volatile_provider_id，map_version，volatile_location_id,end_time, created_time,nds_packed_tile_id 错误需要输出对应所影响的volatile location id及attr id
+
+
 ----20220323----
 1、msg_id字段缺失时未报错，给了一个默认值null；且为null时也不报错——未对该字段进行校验
 2、使用pycharm无法进行字段重复的校验，不会出现报错信息，postman正常
