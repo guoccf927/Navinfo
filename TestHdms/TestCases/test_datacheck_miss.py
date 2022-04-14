@@ -4,6 +4,8 @@
 # @Description :字段缺失校验,其中"msg_id"字段缺失不报错
 import re
 
+import pytest
+
 from TestHdms.Base.basefunc_test import *
 
 LOOP_NUM = 10
@@ -45,27 +47,30 @@ class Base(TestBaseFunc):
                     for j in range(LOOP_NUM):
                         res_err = self.get_errorlog(self.catalog_id, self.error_layer_id)
                         if trace_id in res_err:
-                            attr_id = re.findall(r'"attr_id":(.*?),', res_err)
-                            volatile_location_id = re.findall(r'"volatile_location_id":(.*?),', res_err)
+                            # 22Q3SP1需求10839要求输出attr_id和location_id
+                            attr_id1 = re.findall(r'"attr_id":(.*?),', res_err)
+                            attr_id2 = re.findall(r'"attr_id":(.*?)}', res_err)
+                            attr_id = attr_id1 if len(attr_id1) > 0 else attr_id2
                             if len(attr_id) == 0:
-                                print(f'10839字段校验：{file_list[i]} attr_id 不存在')
-                            if len(attr_id) != 0:
-                                if attr_id[0] == 'null':
-                                    print(f'10839字段校验：{file_list[i]} attr_id 为null')
-                                if attr_id[0] == '""':
-                                    print(f'10839字段校验：{file_list[i]} attr_id 为""')
+                                print('attr_id 不存在')
+                            elif attr_id[0] == 'null':
+                                print('attr_id 为null')
+                            elif attr_id[0] == '""':
+                                print('attr_id 为""')
+                            volatile_location_id1 = re.findall(r'"volatile_location_id":(.*?),', res_err)
+                            volatile_location_id2 = re.findall(r'"volatile_location_id":(.*?)}', res_err)
+                            volatile_location_id = volatile_location_id1 if len(volatile_location_id1) > 0 else volatile_location_id2
                             if len(volatile_location_id) == 0:
-                                print(f'10839字段校验：{file_list[i]} volatile_location_id 不存在')
-                            if len(volatile_location_id) != 0:
-                                if volatile_location_id[0] == 'null':
-                                    print(f'10839字段校验：{file_list[i]} volatile_location_id 为null')
-                                if volatile_location_id[0] == '""':
-                                    print(f'10839字段校验：{file_list[i]} volatile_location_id 为""')
+                                print('volatile_location_id 不存在')
+                            elif volatile_location_id[0] == 'null':
+                                print('volatile_location_id 为null')
+                            elif volatile_location_id[0] == '""':
+                                print('volatile_location_id 为""')
                             print('\n')
                             break
                         time.sleep(TIME_SLEEP)
                         print(f"循环{j + 1}*{str(TIME_SLEEP)}s,还没找到对应的日志")
-                    # assert self.error_log_list[i - 1] in res_err, f'{file_list[i]} 日志错误'
+                    assert self.error_log_list[i - 1] in res_err, f'{file_list[i]} 日志错误'
 
 
 class TestDataCheckMiss:
@@ -93,6 +98,7 @@ class TestDataCheckMiss:
         file_dir = f'{DATA_CHECK_FILE_DIR}/02 rcs-字段缺失/ext'
         Base(CATALOG_RCSEXT, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, MISS_FIELD_RCSEXT_ERRORLOG_LIST)
 
+    # @pytest.mark.skip()
     def test_hcc_prod_03(self):
         """
         hcc 正式线
@@ -103,6 +109,7 @@ class TestDataCheckMiss:
         file_dir = f'{DATA_CHECK_FILE_DIR}/03 hcc-字段缺失/hcc'
         Base(CATALOG_HCC_HCI, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, MISS_FIELD_HCC_ERRORLOG_LIST)
 
+    # @pytest.mark.skip()
     def test_hci_prod_04(self):
         """
         hci 正式线
@@ -133,6 +140,7 @@ class TestDataCheckMiss:
         file_dir = f'{DATA_CHECK_FILE_DIR}/02 rcs-字段缺失/ext'
         Base(CATALOG_RCSEXT_TEST, TRACEID_LAYER_RCSEXT, ERROR_LAYER_RCSEXT, file_dir, MISS_FIELD_RCSEXT_ERRORLOG_LIST)
 
+    # @pytest.mark.skip()
     def test_hcc_int_07(self):
         """
         hcc 测试线
@@ -143,6 +151,7 @@ class TestDataCheckMiss:
         file_dir = f'{DATA_CHECK_FILE_DIR}/03 hcc-字段缺失/hcc'
         Base(CATALOG_HCC_HCI_TEST, TRACEID_LAYER_HCC, ERROR_LAYER_HCC, file_dir, MISS_FIELD_HCC_ERRORLOG_LIST)
 
+    # @pytest.mark.skip()
     def test_hci_int_08(self):
         """
         hci 测试线
